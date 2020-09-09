@@ -1,11 +1,11 @@
 object Form1: TForm1
-  Left = 293
-  Height = 568
-  Top = 103
-  Width = 401
+  Left = 276
+  Height = 646
+  Top = 15
+  Width = 484
   Caption = 'Form1'
-  ClientHeight = 568
-  ClientWidth = 401
+  ClientHeight = 646
+  ClientWidth = 484
   Constraints.MinHeight = 550
   Constraints.MinWidth = 306
   Icon.Data = {
@@ -95,7 +95,7 @@ object Form1: TForm1
     Height = 27
     Hint = 'URL'
     Top = 4
-    Width = 393
+    Width = 476
     Anchors = [akTop, akLeft, akRight]
     AutoComplete = True
     AutoCompleteText = [cbactEnabled, cbactEndOfLineComplete, cbactSearchAscending]
@@ -113,7 +113,7 @@ object Form1: TForm1
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = SpeedButton2
     AnchorSideBottom.Side = asrCenter
-    Left = 320
+    Left = 403
     Height = 23
     Hint = 'Read data from device'
     Top = 35
@@ -172,7 +172,7 @@ object Form1: TForm1
     Left = 4
     Height = 13
     Top = 62
-    Width = 393
+    Width = 476
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Top = 4
     Shape = bsTopLine
@@ -180,8 +180,8 @@ object Form1: TForm1
   object StatusBar1: TStatusBar
     Left = 0
     Height = 17
-    Top = 551
-    Width = 401
+    Top = 629
+    Width = 484
     Panels = <    
       item
         Width = 160
@@ -192,7 +192,7 @@ object Form1: TForm1
     AnchorSideTop.Control = ComboBox1
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = SpeedButton3
-    Left = 347
+    Left = 430
     Height = 22
     Hint = 'Add URL to list'
     Top = 35
@@ -247,7 +247,7 @@ object Form1: TForm1
     AnchorSideTop.Side = asrBottom
     AnchorSideRight.Control = Owner
     AnchorSideRight.Side = asrBottom
-    Left = 374
+    Left = 457
     Height = 22
     Hint = 'Remove URL from list'
     Top = 35
@@ -307,15 +307,54 @@ object Form1: TForm1
     Height = 23
     Hint = 'UID'
     Top = 35
-    Width = 188
+    Width = 271
     Anchors = [akTop, akLeft, akRight]
     BorderSpacing.Left = 4
     BorderSpacing.Top = 4
     BorderSpacing.Right = 4
     ParentShowHint = False
     ShowHint = True
-    TabOrder = 1
+    TabOrder = 2
     Text = '00000000'
+  end
+  object ComboBox2: TComboBox
+    AnchorSideLeft.Control = ComboBox1
+    AnchorSideTop.Control = ComboBox1
+    AnchorSideTop.Side = asrBottom
+    AnchorSideRight.Control = Owner
+    AnchorSideRight.Side = asrBottom
+    Left = 4
+    Height = 25
+    Hint = 'Number of channel'
+    Top = 35
+    Width = 120
+    BorderSpacing.Right = 4
+    ItemHeight = 0
+    ItemIndex = 0
+    Items.Strings = (
+      'Channel #1'
+      'Channel #2'
+      'Channel #3'
+      'Channel #4'
+      'Channel #5'
+      'Channel #6'
+      'Channel #7'
+      'Channel #8'
+      'Channel #9'
+      'Channel #10'
+      'Channel #11'
+      'Channel #12'
+      'Channel #13'
+      'Channel #14'
+      'Channel #15'
+      'Channel #16'
+    )
+    OnChange = ComboBox2Change
+    ParentShowHint = False
+    ShowHint = True
+    Style = csDropDownList
+    TabOrder = 1
+    Text = 'Channel #1'
   end
   object PageControl1: TPageControl
     AnchorSideLeft.Control = ComboBox1
@@ -325,19 +364,19 @@ object Form1: TForm1
     AnchorSideRight.Side = asrBottom
     AnchorSideBottom.Control = StatusBar1
     Left = 8
-    Height = 481
+    Height = 559
     Top = 66
-    Width = 385
-    ActivePage = TabSheet1
+    Width = 468
+    ActivePage = TabSheet2
     Anchors = [akTop, akLeft, akRight, akBottom]
     BorderSpacing.Top = 4
     BorderSpacing.Around = 4
-    TabIndex = 0
-    TabOrder = 3
+    TabIndex = 1
+    TabOrder = 4
     object TabSheet1: TTabSheet
       Caption = 'Channel #0'
-      ClientHeight = 450
-      ClientWidth = 379
+      ClientHeight = 528
+      ClientWidth = 462
       object Label17: TLabel
         AnchorSideLeft.Control = TabSheet1
         AnchorSideTop.Control = TabSheet1
@@ -383,13 +422,13 @@ object Form1: TForm1
         Left = 8
         Height = 128
         Top = 71
-        Width = 363
+        Width = 387
         Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Top = 8
         BorderSpacing.Right = 8
         Caption = 'Mains voltage'
         ClientHeight = 113
-        ClientWidth = 359
+        ClientWidth = 383
         TabOrder = 0
         object Bevel16: TBevel
           AnchorSideLeft.Control = GroupBox4
@@ -567,13 +606,13 @@ object Form1: TForm1
         Left = 8
         Height = 78
         Top = 207
-        Width = 363
+        Width = 387
         Anchors = [akTop, akLeft, akRight]
         BorderSpacing.Top = 8
         BorderSpacing.Right = 8
         Caption = 'Alarm'
         ClientHeight = 63
-        ClientWidth = 359
+        ClientWidth = 383
         TabOrder = 1
         object Bevel20: TBevel
           AnchorSideLeft.Control = GroupBox5
@@ -668,7 +707,7 @@ object Form1: TForm1
         Left = 8
         Height = 13
         Top = 29
-        Width = 363
+        Width = 387
         Anchors = [akTop, akLeft, akRight]
         AutoSize = False
         BorderSpacing.Top = 8
@@ -678,394 +717,147 @@ object Form1: TForm1
     end
     object TabSheet2: TTabSheet
       Caption = 'Channel #?'
-      ClientHeight = 450
-      ClientWidth = 379
-      object GroupBox2: TGroupBox
-        AnchorSideLeft.Control = GroupBox1
-        AnchorSideTop.Control = GroupBox1
-        AnchorSideTop.Side = asrBottom
-        AnchorSideRight.Control = GroupBox1
-        AnchorSideRight.Side = asrBottom
-        Left = 0
-        Height = 132
-        Top = 37
-        Width = 605
-        Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Top = 4
-        Caption = 'Errors'
-        ClientHeight = 117
-        ClientWidth = 601
-        TabOrder = 0
-        object Bevel8: TBevel
-          AnchorSideLeft.Control = GroupBox2
-          AnchorSideTop.Control = GroupBox2
-          Left = 16
-          Height = 18
-          Top = 8
-          Width = 30
-          BorderSpacing.Left = 16
-          BorderSpacing.Top = 8
-        end
-        object Shape7: TShape
-          AnchorSideLeft.Control = Bevel8
-          AnchorSideTop.Control = Bevel8
-          AnchorSideRight.Control = Bevel8
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel8
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 10
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 76
-          ParentShowHint = False
-        end
-        object Label9: TLabel
-          AnchorSideLeft.Control = Bevel8
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel8
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 10
-          Width = 97
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Bad temperature'
-          ParentColor = False
-          ParentShowHint = False
-        end
-        object Bevel9: TBevel
-          AnchorSideLeft.Control = Bevel8
-          AnchorSideTop.Control = Bevel8
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 34
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape8: TShape
-          AnchorSideLeft.Control = Bevel9
-          AnchorSideTop.Control = Bevel9
-          AnchorSideRight.Control = Bevel9
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel9
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 36
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 76
-          ParentShowHint = False
-        end
-        object Label10: TLabel
-          AnchorSideLeft.Control = Bevel9
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel9
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 36
-          Width = 172
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Switching box protection error'
-          ParentColor = False
-          ParentShowHint = False
-        end
-        object Bevel10: TBevel
-          AnchorSideLeft.Control = Bevel9
-          AnchorSideTop.Control = Bevel9
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 60
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape9: TShape
-          AnchorSideLeft.Control = Bevel10
-          AnchorSideTop.Control = Bevel10
-          AnchorSideRight.Control = Bevel10
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel10
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 62
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 76
-          ParentShowHint = False
-        end
-        object Label11: TLabel
-          AnchorSideLeft.Control = Bevel10
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel10
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 62
-          Width = 114
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Low water pressure'
-          ParentColor = False
-          ParentShowHint = False
-        end
-        object Bevel11: TBevel
-          AnchorSideLeft.Control = Bevel10
-          AnchorSideTop.Control = Bevel10
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 86
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape10: TShape
-          AnchorSideLeft.Control = Bevel11
-          AnchorSideTop.Control = Bevel11
-          AnchorSideRight.Control = Bevel11
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel11
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 88
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 76
-          ParentShowHint = False
-        end
-        object Label12: TLabel
-          AnchorSideLeft.Control = Bevel11
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel11
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 88
-          Width = 74
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Bad humidity'
-          ParentColor = False
-          ParentShowHint = False
-        end
-      end
-      object GroupBox3: TGroupBox
-        AnchorSideLeft.Control = GroupBox1
-        AnchorSideTop.Control = GroupBox2
-        AnchorSideTop.Side = asrBottom
-        AnchorSideRight.Control = GroupBox1
-        AnchorSideRight.Side = asrBottom
-        Left = 0
-        Height = 129
-        Top = 40
-        Width = 605
-        Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Top = 4
-        Caption = 'Outputs'
-        ClientHeight = 114
-        ClientWidth = 601
-        TabOrder = 1
-        object Bevel12: TBevel
-          AnchorSideLeft.Control = GroupBox3
-          AnchorSideTop.Control = GroupBox3
-          Left = 16
-          Height = 18
-          Top = 8
-          Width = 30
-          BorderSpacing.Left = 16
-          BorderSpacing.Top = 8
-        end
-        object Shape11: TShape
-          AnchorSideLeft.Control = Bevel12
-          AnchorSideTop.Control = Bevel12
-          AnchorSideRight.Control = Bevel12
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel12
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 10
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 25700
-          ParentShowHint = False
-        end
-        object Label13: TLabel
-          AnchorSideLeft.Control = Bevel12
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel12
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 10
-          Width = 43
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Heating'
-          ParentColor = False
-          ParentShowHint = False
-        end
-        object Bevel13: TBevel
-          AnchorSideLeft.Control = Bevel12
-          AnchorSideTop.Control = Bevel12
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 34
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape12: TShape
-          AnchorSideLeft.Control = Bevel13
-          AnchorSideTop.Control = Bevel13
-          AnchorSideRight.Control = Bevel13
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel13
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 36
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 25700
-          ParentShowHint = False
-        end
-        object Label14: TLabel
-          AnchorSideLeft.Control = Bevel13
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel13
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 36
-          Width = 44
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Lighting'
-          ParentColor = False
-          ParentShowHint = False
-        end
-        object Bevel14: TBevel
-          AnchorSideLeft.Control = Bevel13
-          AnchorSideTop.Control = Bevel13
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 60
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape13: TShape
-          AnchorSideLeft.Control = Bevel14
-          AnchorSideTop.Control = Bevel14
-          AnchorSideRight.Control = Bevel14
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel14
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 62
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 25700
-          ParentShowHint = False
-        end
-        object Label15: TLabel
-          AnchorSideLeft.Control = Bevel14
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel14
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 62
-          Width = 58
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Ventilating'
-          ParentColor = False
-          ParentShowHint = False
-        end
-        object Bevel15: TBevel
-          AnchorSideLeft.Control = Bevel14
-          AnchorSideTop.Control = Bevel14
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 86
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape14: TShape
-          AnchorSideLeft.Control = Bevel15
-          AnchorSideTop.Control = Bevel15
-          AnchorSideRight.Control = Bevel15
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel15
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 88
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 25700
-          ParentShowHint = False
-        end
-        object Label16: TLabel
-          AnchorSideLeft.Control = Bevel15
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel15
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 88
-          Width = 66
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Humidifying'
-          ParentColor = False
-          ParentShowHint = False
-        end
-      end
+      ClientHeight = 528
+      ClientWidth = 462
       object GroupBox1: TGroupBox
-        AnchorSideLeft.Control = ComboBox1
-        AnchorSideTop.Control = Bevel2
+        AnchorSideLeft.Control = TabSheet2
         AnchorSideTop.Side = asrBottom
-        AnchorSideRight.Control = SpeedButton3
+        AnchorSideRight.Control = TabSheet2
         AnchorSideRight.Side = asrBottom
-        Left = 0
-        Height = 128
-        Top = 41
-        Width = 605
+        Left = 8
+        Height = 232
+        Top = 72
+        Width = 446
         Anchors = [akTop, akLeft, akRight]
-        BorderSpacing.Top = 4
-        Caption = 'Inputs'
-        ClientHeight = 113
-        ClientWidth = 601
-        TabOrder = 2
-        object Bevel4: TBevel
+        BorderSpacing.Around = 8
+        Caption = 'MM7D'
+        ClientHeight = 217
+        ClientWidth = 442
+        TabOrder = 0
+        object Bevel2: TBevel
           AnchorSideLeft.Control = GroupBox1
           AnchorSideTop.Control = GroupBox1
-          Left = 16
-          Height = 18
+          Left = 8
+          Height = 61
           Top = 8
-          Width = 30
-          BorderSpacing.Left = 16
+          Width = 173
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Around = 8
+        end
+        object Bevel3: TBevel
+          AnchorSideLeft.Control = Bevel2
+          AnchorSideTop.Control = Bevel2
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = Bevel2
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 61
+          Top = 77
+          Width = 173
+          Anchors = [akTop, akLeft, akRight]
+          BorderSpacing.Top = 8
+        end
+        object Shape1: TShape
+          AnchorSideLeft.Control = Bevel2
+          AnchorSideTop.Control = Bevel2
+          AnchorSideRight.Control = Bevel2
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = Bevel2
+          AnchorSideBottom.Side = asrBottom
+          Left = 10
+          Height = 57
+          Top = 10
+          Width = 169
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderSpacing.Around = 2
+          Brush.Color = 5046272
+        end
+        object Shape2: TShape
+          AnchorSideLeft.Control = Bevel3
+          AnchorSideTop.Control = Bevel3
+          AnchorSideRight.Control = Bevel3
+          AnchorSideRight.Side = asrBottom
+          AnchorSideBottom.Control = Bevel3
+          AnchorSideBottom.Side = asrBottom
+          Left = 10
+          Height = 57
+          Top = 79
+          Width = 169
+          Anchors = [akTop, akLeft, akRight, akBottom]
+          BorderSpacing.Around = 2
+          Brush.Color = 5046272
+        end
+        object Label4: TLabel
+          AnchorSideLeft.Control = Bevel3
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideTop.Control = Bevel3
+          Left = 74
+          Height = 24
+          Top = 100
+          Width = 41
+          BorderSpacing.Top = 23
+          Caption = '0 %'
+          Font.Color = clAqua
+          Font.Height = 20
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label1: TLabel
+          AnchorSideLeft.Control = Bevel2
+          AnchorSideTop.Control = Bevel2
+          AnchorSideBottom.Control = Bevel1
+          AnchorSideBottom.Side = asrBottom
+          Left = 12
+          Height = 13
+          Top = 12
+          Width = 72
+          BorderSpacing.Around = 4
+          Caption = 'Temperature'
+          Font.Color = clAqua
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label2: TLabel
+          AnchorSideLeft.Control = Bevel3
+          AnchorSideTop.Control = Bevel3
+          Left = 12
+          Height = 13
+          Top = 81
+          Width = 96
+          BorderSpacing.Around = 4
+          Caption = 'Relative humidity'
+          Font.Color = clAqua
+          ParentColor = False
+          ParentFont = False
+        end
+        object Label3: TLabel
+          AnchorSideLeft.Control = Bevel2
+          AnchorSideLeft.Side = asrCenter
+          AnchorSideTop.Control = Bevel2
+          Left = 71
+          Height = 24
+          Top = 31
+          Width = 46
+          BorderSpacing.Top = 23
+          Caption = '0 °C'
+          Font.Color = clAqua
+          Font.Height = 20
+          Font.Style = [fsBold]
+          ParentColor = False
+          ParentFont = False
+        end
+        object Bevel4: TBevel
+          AnchorSideLeft.Control = Bevel2
+          AnchorSideTop.Control = Bevel3
+          AnchorSideTop.Side = asrBottom
+          AnchorSideRight.Control = Bevel2
+          AnchorSideRight.Side = asrBottom
+          Left = 8
+          Height = 61
+          Top = 146
+          Width = 173
+          Anchors = [akTop, akLeft, akRight]
           BorderSpacing.Top = 8
         end
         object Shape3: TShape
@@ -1075,309 +867,242 @@ object Form1: TForm1
           AnchorSideRight.Side = asrBottom
           AnchorSideBottom.Control = Bevel4
           AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 10
-          Width = 26
+          Left = 10
+          Height = 57
+          Top = 148
+          Width = 169
           Anchors = [akTop, akLeft, akRight, akBottom]
           BorderSpacing.Around = 2
-          Brush.Color = 19456
-          ParentShowHint = False
+          Brush.Color = 5046272
         end
         object Label5: TLabel
           AnchorSideLeft.Control = Bevel4
-          AnchorSideLeft.Side = asrBottom
+          AnchorSideLeft.Side = asrCenter
           AnchorSideTop.Control = Bevel4
-          AnchorSideBottom.Control = Bevel4
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 10
-          Width = 167
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Switching box manual control'
+          Left = 74
+          Height = 24
+          Top = 169
+          Width = 41
+          BorderSpacing.Top = 23
+          Caption = '0 %'
+          Font.Color = clAqua
+          Font.Height = 20
+          Font.Style = [fsBold]
           ParentColor = False
-          ParentShowHint = False
-        end
-        object Bevel5: TBevel
-          AnchorSideLeft.Control = Bevel4
-          AnchorSideTop.Control = Bevel4
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 34
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape4: TShape
-          AnchorSideLeft.Control = Bevel5
-          AnchorSideTop.Control = Bevel5
-          AnchorSideRight.Control = Bevel5
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel5
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 36
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 19456
-          ParentShowHint = False
+          ParentFont = False
         end
         object Label6: TLabel
-          AnchorSideLeft.Control = Bevel5
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel5
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
+          AnchorSideLeft.Control = Bevel4
+          AnchorSideTop.Control = Bevel4
+          Left = 12
           Height = 13
-          Top = 36
-          Width = 209
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Switching box overcurrent protection'
+          Top = 150
+          Width = 140
+          BorderSpacing.Around = 4
+          Caption = 'Relative gas concentrate'
+          Font.Color = clAqua
           ParentColor = False
-          ParentShowHint = False
+          ParentFont = False
         end
-        object Bevel6: TBevel
-          AnchorSideLeft.Control = Bevel5
-          AnchorSideTop.Control = Bevel5
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 60
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape5: TShape
-          AnchorSideLeft.Control = Bevel6
-          AnchorSideTop.Control = Bevel6
-          AnchorSideRight.Control = Bevel6
+        object GroupBox6: TGroupBox
+          AnchorSideLeft.Control = Bevel2
+          AnchorSideLeft.Side = asrBottom
+          AnchorSideTop.Control = GroupBox1
+          AnchorSideRight.Control = GroupBox1
           AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel6
+          AnchorSideBottom.Control = GroupBox1
           AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 62
-          Width = 26
+          Left = 189
+          Height = 207
+          Top = 2
+          Width = 245
           Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 19456
-          ParentShowHint = False
-        end
-        object Label7: TLabel
-          AnchorSideLeft.Control = Bevel6
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideBottom.Control = Bevel6
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 62
-          Width = 138
-          Anchors = [akLeft, akBottom]
           BorderSpacing.Left = 8
-          Caption = 'Water pressure detector'
-          ParentColor = False
-          ParentShowHint = False
+          BorderSpacing.Top = 2
+          BorderSpacing.Right = 8
+          BorderSpacing.Bottom = 8
+          Caption = 'Status signs'
+          ClientHeight = 192
+          ClientWidth = 241
+          TabOrder = 0
+          object Bevel22: TBevel
+            AnchorSideLeft.Control = GroupBox6
+            AnchorSideTop.Control = GroupBox6
+            Left = 16
+            Height = 18
+            Top = 16
+            Width = 30
+            BorderSpacing.Left = 16
+            BorderSpacing.Top = 16
+          end
+          object Shape21: TShape
+            AnchorSideLeft.Control = Bevel22
+            AnchorSideTop.Control = Bevel22
+            AnchorSideRight.Control = Bevel22
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = Bevel22
+            AnchorSideBottom.Side = asrBottom
+            Left = 18
+            Height = 14
+            Top = 18
+            Width = 26
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            BorderSpacing.Around = 2
+            Brush.Color = clGreen
+            ParentShowHint = False
+          end
+          object Label31: TLabel
+            AnchorSideLeft.Control = Bevel22
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideTop.Control = Bevel22
+            AnchorSideBottom.Control = Bevel22
+            AnchorSideBottom.Side = asrCenter
+            Left = 54
+            Height = 13
+            Top = 18
+            Width = 71
+            Anchors = [akLeft, akBottom]
+            BorderSpacing.Left = 8
+            Caption = 'Good values'
+            ParentColor = False
+            ParentShowHint = False
+          end
+          object Bevel23: TBevel
+            AnchorSideLeft.Control = Bevel22
+            AnchorSideTop.Control = Bevel22
+            AnchorSideTop.Side = asrBottom
+            Left = 16
+            Height = 18
+            Top = 42
+            Width = 30
+            BorderSpacing.Top = 8
+          end
+          object Shape22: TShape
+            AnchorSideLeft.Control = Bevel23
+            AnchorSideTop.Control = Bevel23
+            AnchorSideRight.Control = Bevel23
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = Bevel23
+            AnchorSideBottom.Side = asrBottom
+            Left = 18
+            Height = 14
+            Top = 44
+            Width = 26
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            BorderSpacing.Around = 2
+            Brush.Color = clOlive
+            ParentShowHint = False
+          end
+          object Label32: TLabel
+            AnchorSideLeft.Control = Bevel23
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideBottom.Control = Bevel23
+            AnchorSideBottom.Side = asrCenter
+            Left = 54
+            Height = 13
+            Top = 44
+            Width = 113
+            Anchors = [akLeft, akBottom]
+            BorderSpacing.Left = 8
+            Caption = 'Out of good interval'
+            ParentColor = False
+            ParentShowHint = False
+          end
+          object Bevel24: TBevel
+            AnchorSideLeft.Control = Bevel23
+            AnchorSideTop.Control = Bevel23
+            AnchorSideTop.Side = asrBottom
+            Left = 16
+            Height = 18
+            Top = 68
+            Width = 30
+            BorderSpacing.Top = 8
+          end
+          object Shape23: TShape
+            AnchorSideLeft.Control = Bevel24
+            AnchorSideTop.Control = Bevel24
+            AnchorSideRight.Control = Bevel24
+            AnchorSideRight.Side = asrBottom
+            AnchorSideBottom.Control = Bevel24
+            AnchorSideBottom.Side = asrBottom
+            Left = 18
+            Height = 14
+            Top = 70
+            Width = 26
+            Anchors = [akTop, akLeft, akRight, akBottom]
+            BorderSpacing.Around = 2
+            Brush.Color = clMaroon
+            ParentShowHint = False
+          end
+          object Label33: TLabel
+            AnchorSideLeft.Control = Bevel24
+            AnchorSideLeft.Side = asrBottom
+            AnchorSideBottom.Control = Bevel24
+            AnchorSideBottom.Side = asrCenter
+            Left = 54
+            Height = 13
+            Top = 70
+            Width = 63
+            Anchors = [akLeft, akBottom]
+            BorderSpacing.Left = 8
+            Caption = 'Bad values'
+            ParentColor = False
+            ParentShowHint = False
+          end
         end
-        object Bevel7: TBevel
-          AnchorSideLeft.Control = Bevel6
-          AnchorSideTop.Control = Bevel6
-          AnchorSideTop.Side = asrBottom
-          Left = 16
-          Height = 18
-          Top = 86
-          Width = 30
-          BorderSpacing.Top = 8
-        end
-        object Shape6: TShape
-          AnchorSideLeft.Control = Bevel7
-          AnchorSideTop.Control = Bevel7
-          AnchorSideRight.Control = Bevel7
-          AnchorSideRight.Side = asrBottom
-          AnchorSideBottom.Control = Bevel7
-          AnchorSideBottom.Side = asrBottom
-          Left = 18
-          Height = 14
-          Top = 88
-          Width = 26
-          Anchors = [akTop, akLeft, akRight, akBottom]
-          BorderSpacing.Around = 2
-          Brush.Color = 19456
-          ParentShowHint = False
-        end
-        object Label8: TLabel
-          AnchorSideLeft.Control = Bevel7
-          AnchorSideLeft.Side = asrBottom
-          AnchorSideTop.Side = asrCenter
-          AnchorSideBottom.Control = Bevel7
-          AnchorSideBottom.Side = asrCenter
-          Left = 54
-          Height = 13
-          Top = 88
-          Width = 198
-          Anchors = [akLeft, akBottom]
-          BorderSpacing.Left = 8
-          Caption = 'Door and window opening detector'
-          ParentColor = False
-          ParentShowHint = False
-        end
       end
-      object Bevel2: TBevel
-        AnchorSideLeft.Control = ComboBox1
-        AnchorSideTop.Control = Edit1
-        AnchorSideTop.Side = asrBottom
-        Left = 4
-        Height = 61
-        Top = 68
-        Width = 173
-        BorderSpacing.Top = 10
-      end
-      object Bevel3: TBevel
-        AnchorSideLeft.Control = Bevel2
-        AnchorSideLeft.Side = asrBottom
-        AnchorSideTop.Control = Edit1
-        AnchorSideTop.Side = asrBottom
-        AnchorSideRight.Control = SpeedButton1
-        AnchorSideRight.Side = asrBottom
-        Left = 21
-        Height = 61
-        Top = 68
-        Width = 173
-        BorderSpacing.Left = 4
-        BorderSpacing.Top = 10
-      end
-      object Label4: TLabel
-        AnchorSideLeft.Control = Bevel3
-        AnchorSideLeft.Side = asrCenter
-        AnchorSideTop.Control = Bevel3
-        Left = 87
-        Height = 24
-        Top = 91
-        Width = 41
-        BorderSpacing.Top = 23
-        Caption = '0 %'
-        Font.Color = clAqua
-        Font.Height = 20
-        Font.Style = [fsBold]
-        ParentColor = False
-        ParentFont = False
-      end
-      object Label3: TLabel
-        AnchorSideLeft.Control = Bevel2
-        AnchorSideLeft.Side = asrCenter
-        AnchorSideTop.Control = Bevel2
-        Left = 67
-        Height = 24
-        Top = 91
-        Width = 46
-        BorderSpacing.Top = 23
-        Caption = '0 °C'
-        Font.Color = clAqua
-        Font.Height = 20
-        Font.Style = [fsBold]
-        ParentColor = False
-        ParentFont = False
-      end
-      object Label1: TLabel
-        AnchorSideLeft.Control = Bevel2
-        AnchorSideTop.Control = Bevel2
-        AnchorSideBottom.Control = Bevel1
-        AnchorSideBottom.Side = asrBottom
+      object Label27: TLabel
+        AnchorSideLeft.Control = TabSheet2
+        AnchorSideTop.Control = TabSheet2
         Left = 8
         Height = 13
-        Top = 72
-        Width = 72
-        BorderSpacing.Around = 4
-        Caption = 'Temperature'
-        Font.Color = clAqua
+        Top = 8
+        Width = 130
+        BorderSpacing.Around = 8
+        Caption = 'Slave controller pair'
+        Font.Style = [fsBold]
         ParentColor = False
         ParentFont = False
       end
-      object Label2: TLabel
-        AnchorSideLeft.Control = Bevel3
-        AnchorSideTop.Control = Bevel3
-        Left = 98
+      object Label28: TLabel
+        AnchorSideLeft.Control = Label27
+        AnchorSideTop.Control = Label30
+        AnchorSideTop.Side = asrBottom
+        Left = 8
         Height = 13
-        Top = 72
-        Width = 96
-        BorderSpacing.Around = 4
-        Caption = 'Relative humidity'
-        Font.Color = clAqua
+        Top = 50
+        Width = 73
+        BorderSpacing.Top = 8
+        Caption = 'Last change:'
         ParentColor = False
-        ParentFont = False
       end
-      object Shape1: TShape
-        AnchorSideLeft.Control = Bevel2
-        AnchorSideTop.Control = Bevel2
-        AnchorSideRight.Control = Bevel2
-        AnchorSideRight.Side = asrBottom
-        AnchorSideBottom.Control = Bevel2
-        AnchorSideBottom.Side = asrBottom
-        Left = 6
-        Height = 338
-        Top = 70
-        Width = 354
-        Anchors = [akTop, akLeft, akRight, akBottom]
-        BorderSpacing.Around = 2
-        Brush.Color = 5046272
+      object Label29: TLabel
+        AnchorSideLeft.Control = Label28
+        AnchorSideLeft.Side = asrBottom
+        AnchorSideTop.Control = Label28
+        Left = 85
+        Height = 1
+        Top = 50
+        Width = 1
+        BorderSpacing.Left = 4
+        ParentColor = False
       end
-      object Shape2: TShape
-        AnchorSideLeft.Control = Bevel3
-        AnchorSideTop.Control = Bevel3
-        AnchorSideRight.Control = Bevel3
+      object Label30: TLabel
+        AnchorSideLeft.Control = Label27
+        AnchorSideTop.Control = Label27
+        AnchorSideTop.Side = asrBottom
+        AnchorSideRight.Control = TabSheet2
         AnchorSideRight.Side = asrBottom
-        AnchorSideBottom.Control = Bevel3
-        AnchorSideBottom.Side = asrBottom
-        Left = 25
-        Height = 338
-        Top = 70
-        Width = 354
-        Anchors = [akTop, akLeft, akRight, akBottom]
-        BorderSpacing.Around = 2
-        Brush.Color = 5046272
+        Left = 8
+        Height = 13
+        Top = 29
+        Width = 446
+        Anchors = [akTop, akLeft, akRight]
+        AutoSize = False
+        BorderSpacing.Top = 8
+        BorderSpacing.Right = 8
+        ParentColor = False
       end
     end
-  end
-  object ComboBox2: TComboBox
-    AnchorSideLeft.Control = ComboBox1
-    AnchorSideTop.Control = ComboBox1
-    AnchorSideTop.Side = asrBottom
-    AnchorSideRight.Control = Owner
-    AnchorSideRight.Side = asrBottom
-    Left = 4
-    Height = 25
-    Hint = 'Number of channel'
-    Top = 35
-    Width = 120
-    BorderSpacing.Right = 4
-    ItemHeight = 0
-    ItemIndex = 0
-    Items.Strings = (
-      'Channel #1'
-      'Channel #2'
-      'Channel #3'
-      'Channel #4'
-      'Channel #5'
-      'Channel #6'
-      'Channel #7'
-      'Channel #8'
-      'Channel #9'
-      'Channel #10'
-      'Channel #11'
-      'Channel #12'
-      'Channel #13'
-      'Channel #14'
-      'Channel #15'
-      'Channel #16'
-    )
-    OnChange = ComboBox2Change
-    ParentShowHint = False
-    ShowHint = True
-    Style = csDropDownList
-    TabOrder = 4
-    Text = 'Channel #1'
   end
 end
