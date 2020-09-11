@@ -1,0 +1,2 @@
+?package(mm8dread):needs="X11" section="Applications/Network/Monitoring"\
+  title="MM8DRead" command="mm8dread"
