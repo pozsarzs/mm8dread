@@ -35,15 +35,24 @@ type
     Bevel22: TBevel;
     Bevel23: TBevel;
     Bevel24: TBevel;
+    Bevel28: TBevel;
+    Bevel29: TBevel;
     Bevel3: TBevel;
+    Bevel30: TBevel;
+    Bevel31: TBevel;
+    Bevel32: TBevel;
+    Bevel33: TBevel;
     Bevel4: TBevel;
     ComboBox1: TComboBox;
     ComboBox2: TComboBox;
     Edit1: TEdit;
     GroupBox1: TGroupBox;
+    GroupBox2: TGroupBox;
     GroupBox4: TGroupBox;
     GroupBox5: TGroupBox;
     GroupBox6: TGroupBox;
+    GroupBox8: TGroupBox;
+    GroupBox9: TGroupBox;
     Label1: TLabel;
     Label17: TLabel;
     Label18: TLabel;
@@ -64,9 +73,17 @@ type
     Label31: TLabel;
     Label32: TLabel;
     Label33: TLabel;
+    Label37: TLabel;
+    Label38: TLabel;
+    Label39: TLabel;
     Label4: TLabel;
+    Label40: TLabel;
+    Label41: TLabel;
+    Label42: TLabel;
     Label5: TLabel;
     Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
     PageControl1: TPageControl;
     Shape1: TShape;
     Shape15: TShape;
@@ -79,7 +96,13 @@ type
     Shape21: TShape;
     Shape22: TShape;
     Shape23: TShape;
+    Shape27: TShape;
+    Shape28: TShape;
+    Shape29: TShape;
     Shape3: TShape;
+    Shape30: TShape;
+    Shape31: TShape;
+    Shape32: TShape;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
     SpeedButton3: TSpeedButton;
@@ -143,6 +166,7 @@ begin
   begin
     // Channel #0
     Label19.Caption := '';
+    Label26.Caption := '';
     ledoff := clMaroon;
     Shape15.Brush.Color := ledoff;
     Shape16.Brush.Color := ledoff;
@@ -151,49 +175,20 @@ begin
     Shape19.Brush.Color := ledoff;
     Shape20.Brush.Color := ledoff;
     // Other channels
-
-    {    // displays
-
-távoli mért értékek
-  a. MM7D  hőmérséklet
-  b. MM7D  relatív páratartalom
-  c. MM7D  relatív gázkoncentráció
-
-távoli állapotok
-  d. MM6D  működési mód           0/1     átszövetés/termesztés
-  e. MM6D  kézi üzem              0/1     sárga LED
-  f. MM6D  túláramvédelem         0/1     piros LED
-  g. MM6D  riasztó                0/1     piros LED
-
-távoli kimenetek
-  h. MM6D  világłtás              0/1     zöld LED
-  i. MM6D  szellőztetés           0/1     zöld LED
-  j. MM6D  fűtés                  0/1     zöld LED
-  k. MM7D  zöld állapotjelző      0/1     zöld LED
-  l. MM7D  sárga állapotjelző     0/1     sárga LED
-  n. MM7D  piros állapotjelző     0/1     piros LED
-
-log: date time a b c d e f g h i j k l m n
-
-
-    Label3.Caption := '0 °C';
-    Label4.Caption := '0 %';
-    // LEDs
+    Label29.Caption := '';
+    Label30.Caption := '';
+    // MM7D
+    Label3.Caption := '0°C';
+    Label4.Caption := '0%';
+    Label5.Caption := '0%';
     ledoff := clGreen;
-    Shape3.Brush.Color := ledoff;
-    Shape4.Brush.Color := ledoff;
-    Shape5.Brush.Color := ledoff;
-    Shape6.Brush.Color := ledoff;
-    ledoff := clMaroon;
-    Shape7.Brush.Color := ledoff;
-    Shape8.Brush.Color := ledoff;
-    Shape9.Brush.Color := ledoff;
-    Shape10.Brush.Color := ledoff;
+    Shape21.Brush.Color := ledoff;
     ledoff := clOlive;
-    Shape11.Brush.Color := ledoff;
-    Shape12.Brush.Color := ledoff;
-    Shape13.Brush.Color := ledoff;
-    Shape14.Brush.Color := ledoff; }
+    Shape22.Brush.Color := ledoff;
+    ledoff := clMaroon;
+    Shape23.Brush.Color := ledoff;
+    //MM6D
+
     // Status bar
     StatusBar1.Panels.Items[0].Text := '';
     Form1.Caption := APPNAME + ' v' + VERSION;
@@ -419,3 +414,47 @@ begin
 end;
 
 end.
+
+{
+
+távoli mért értékek
+a. MM7D  hőmérséklet
+b. MM7D  relatív páratartalom
+c. MM7D  relatív gázkoncentráció
+
+távoli állapotok
+d. MM6D  működési mód           0/1     átszövetés/termesztés
+e. MM6D  kézi üzem              0/1     sárga LED
+f. MM6D  túláramvédelem         0/1     piros LED
+g. MM6D  riasztó                0/1     piros LED
+
+távoli kimenetek
+h. MM6D  világłtás              0/1     zöld LED
+i. MM6D  szellőztetés           0/1     zöld LED
+j. MM6D  fűtés                  0/1     zöld LED
+k. MM7D  zöld állapotjelző      0/1     zöld LED
+l. MM7D  sárga állapotjelző     0/1     sárga LED
+n. MM7D  piros állapotjelző     0/1     piros LED
+
+log: date time a b c d e f g h i j k l m n
+
+
+Label3.Caption := '0 °C';
+Label4.Caption := '0 %';
+// LEDs
+ledoff := clGreen;
+Shape3.Brush.Color := ledoff;
+Shape4.Brush.Color := ledoff;
+Shape5.Brush.Color := ledoff;
+Shape6.Brush.Color := ledoff;
+ledoff := clMaroon;
+Shape7.Brush.Color := ledoff;
+Shape8.Brush.Color := ledoff;
+Shape9.Brush.Color := ledoff;
+Shape10.Brush.Color := ledoff;
+ledoff := clOlive;
+Shape11.Brush.Color := ledoff;
+Shape12.Brush.Color := ledoff;
+Shape13.Brush.Color := ledoff;
+Shape14.Brush.Color := ledoff; }
+
