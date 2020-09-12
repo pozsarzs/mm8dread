@@ -113,7 +113,6 @@ type
     procedure ComboBox2Change(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
-    procedure FormResize(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
@@ -126,6 +125,7 @@ type
 var
   Form1: TForm1;
   inifile: string;
+  ledoff, ledon: TColor;
 
 resourcestring
   MESSAGE01 = 'Cannot read configuration file!';
@@ -133,6 +133,8 @@ resourcestring
   MESSAGE03 = 'Cannot read data from this URL!';
   MESSAGE04 = 'Not compatible controller!';
   MESSAGE05 = 'Bad data!';
+  MESSAGE06 = 'Growing mushroom';
+  MESSAGE07 = 'Growing hyphae';
 
 implementation
 
@@ -144,14 +146,13 @@ procedure TForm1.SpeedButton1Click(Sender: TObject);
 var
   format: TFormatSettings;
   good: boolean;
-  ledoff, ledon: TColor;
-  t, rh: single;
+  t, rh, gc: single;
 begin
   good := getdatafromdevice(ComboBox1.Text, Edit1.Text, ComboBox2.ItemIndex + 1);
   if not good then
     ShowMessage(MESSAGE03);
   if good then
-    if (value0.Count < 2) or (value1.Count < 9) then
+    if (value0.Count < 3) or (value1.Count < 9) or (value2.Count < 16) then
     begin
       good := False;
       ShowMessage(MESSAGE05);
@@ -164,31 +165,7 @@ begin
     end;
   if not good then
   begin
-    // Channel #0
-    Label19.Caption := '';
-    Label26.Caption := '';
-    ledoff := clMaroon;
-    Shape15.Brush.Color := ledoff;
-    Shape16.Brush.Color := ledoff;
-    Shape17.Brush.Color := ledoff;
-    Shape18.Brush.Color := ledoff;
-    Shape19.Brush.Color := ledoff;
-    Shape20.Brush.Color := ledoff;
-    // Other channels
-    Label29.Caption := '';
-    Label30.Caption := '';
-    // MM7D
-    Label3.Caption := '0°C';
-    Label4.Caption := '0%';
-    Label5.Caption := '0%';
-    ledoff := clGreen;
-    Shape21.Brush.Color := ledoff;
-    ledoff := clOlive;
-    Shape22.Brush.Color := ledoff;
-    ledoff := clMaroon;
-    Shape23.Brush.Color := ledoff;
-    //MM6D
-
+    ComboBox2Change(Sender);
     // Status bar
     StatusBar1.Panels.Items[0].Text := '';
     Form1.Caption := APPNAME + ' v' + VERSION;
@@ -225,19 +202,13 @@ begin
     else
       Shape20.Brush.Color := ledoff;
     // Other channels
-
-
-    {
-
-
-
-
-
-
-    format.DecimalSeparator:='.';
-    trystrtofloat(value3.Strings[2], t, format);
-    trystrtofloat(value3.Strings[3], rh, format);
-    // displays
+    Label30.Caption := value2.Strings[0];
+    Label29.Caption := value2.Strings[1] + ' ' + value1.Strings[2];
+    // MM7D
+    format.DecimalSeparator := '.';
+    trystrtofloat(value2.Strings[3], t, format);
+    trystrtofloat(value2.Strings[4], rh, format);
+    trystrtofloat(value2.Strings[5], gc, format);
     t := round(t);
     if (t >= 0) and (t < 100) then
       Label3.Caption := floattostr(t) + ' °C'
@@ -248,61 +219,64 @@ begin
       Label4.Caption := floattostr(rh) + ' %'
     else
       Label4.Caption := '0 %';
-    // LEDs
+    gc := round(gc);
+    if (gc >= 0) and (gc < 101) then
+      Label5.Caption := floattostr(gc) + ' %'
+    else
+      Label5.Caption := '0 %';
     ledoff := clGreen;
     ledon := clLime;
-    if value3.Strings[4] = '1' then
-      Shape3.Brush.Color := ledon
+    if value2.Strings[6] = '1' then
+      Shape21.Brush.Color := ledon
     else
-      Shape3.Brush.Color := ledoff;
-    if value3.Strings[5] = '1' then
-      Shape4.Brush.Color := ledon
-    else
-      Shape4.Brush.Color := ledoff;
-    if value3.Strings[6] = '1' then
-      Shape5.Brush.Color := ledon
-    else
-      Shape5.Brush.Color := ledoff;
-    if value3.Strings[7] = '1' then
-      Shape6.Brush.Color := ledon
-    else
-      Shape6.Brush.Color := ledoff;
-    ledoff := clMaroon;
-    ledon := clred;
-    if value3.Strings[12] = '1' then
-      Shape7.Brush.Color := ledon
-    else
-      Shape7.Brush.Color := ledoff;
-    if value3.Strings[13] = '1' then
-      Shape8.Brush.Color := ledon
-    else
-      Shape8.Brush.Color := ledoff;
-    if value3.Strings[14] = '1' then
-      Shape9.Brush.Color := ledon
-    else
-      Shape9.Brush.Color := ledoff;
-    if value3.Strings[15] = '1' then
-      Shape10.Brush.Color := ledon
-    else
-      Shape10.Brush.Color := ledoff;
+      Shape21.Brush.Color := ledoff;
     ledoff := clOlive;
     ledon := clYellow;
-    if value3.Strings[8] = '1' then
-      Shape11.Brush.Color := ledon
+    if value2.Strings[7] = '1' then
+      Shape22.Brush.Color := ledon
     else
-      Shape11.Brush.Color := ledoff;
-    if value3.Strings[9] = '1' then
-      Shape12.Brush.Color := ledon
+      Shape22.Brush.Color := ledoff;
+    ledoff := clMaroon;
+    ledon := clRed;
+    if value2.Strings[8] = '1' then
+      Shape23.Brush.Color := ledon
     else
-      Shape12.Brush.Color := ledoff;
-    if value3.Strings[10] = '1' then
-      Shape13.Brush.Color := ledon
+      Shape23.Brush.Color := ledoff;
+    // MM6D
+    if value2.Strings[9] = '1' then
+      Label8.Caption := MESSAGE06
     else
-      Shape13.Brush.Color := ledoff;
-    if value3.Strings[11] = '1' then
-      Shape14.Brush.Color := ledon
+      Label8.Caption := MESSAGE07;
+    ledoff := clOlive;
+    ledon := clYellow;
+    if value2.Strings[10] = '1' then
+      Shape27.Brush.Color := ledon
     else
-      Shape14.Brush.Color := ledoff;  }
+      Shape27.Brush.Color := ledoff;
+    ledoff := clMaroon;
+    ledon := clRed;
+    if value2.Strings[11] = '1' then
+      Shape28.Brush.Color := ledon
+    else
+      Shape28.Brush.Color := ledoff;
+    if value2.Strings[12] = '1' then
+      Shape29.Brush.Color := ledon
+    else
+      Shape29.Brush.Color := ledoff;
+    ledoff := clGreen;
+    ledon := clLime;
+    if value2.Strings[13] = '1' then
+      Shape30.Brush.Color := ledon
+    else
+      Shape30.Brush.Color := ledoff;
+    if value2.Strings[14] = '1' then
+      Shape31.Brush.Color := ledon
+    else
+      Shape31.Brush.Color := ledoff;
+    if value2.Strings[15] = '1' then
+      Shape32.Brush.Color := ledon
+    else
+      Shape32.Brush.Color := ledoff;
     // Status bar
     StatusBar1.Panels.Items[0].Text := value0.Strings[0] + ' ' + value0.Strings[1];
     Form1.Caption := APPNAME + ' v' + VERSION + ' | ' + value0.Strings[2];
@@ -359,6 +333,43 @@ end;
 procedure TForm1.ComboBox2Change(Sender: TObject);
 begin
   TabSheet2.Caption := ComboBox2.Items.Strings[ComboBox2.ItemIndex];
+  // Channel #0
+  Label19.Caption := '';
+  Label26.Caption := '';
+  ledoff := clMaroon;
+  Shape15.Brush.Color := ledoff;
+  Shape16.Brush.Color := ledoff;
+  Shape17.Brush.Color := ledoff;
+  Shape18.Brush.Color := ledoff;
+  Shape19.Brush.Color := ledoff;
+  Shape20.Brush.Color := ledoff;
+  // Other channels
+  Label29.Caption := '';
+  Label30.Caption := '';
+  // MM7D
+  Label3.Caption := '0°C';
+  Label4.Caption := '0%';
+  Label5.Caption := '0%';
+  ledoff := clGreen;
+  Shape21.Brush.Color := ledoff;
+  ledoff := clOlive;
+  Shape22.Brush.Color := ledoff;
+  ledoff := clMaroon;
+  Shape23.Brush.Color := ledoff;
+  // MM6D
+  Label8.Caption := '';
+  ledoff := clOlive;
+  Shape27.Brush.Color := ledoff;
+  ledoff := clMaroon;
+  Shape28.Brush.Color := ledoff;
+  Shape29.Brush.Color := ledoff;
+  ledoff := clGreen;
+  Shape30.Brush.Color := ledoff;
+  Shape31.Brush.Color := ledoff;
+  Shape32.Brush.Color := ledoff;
+  // Status bar
+  StatusBar1.Panels.Items[0].Text := '';
+  Form1.Caption := APPNAME + ' v' + VERSION;
 end;
 
 // events of Form1
@@ -390,12 +401,6 @@ begin
   ComboBox2Change(Sender);
 end;
 
-procedure TForm1.FormResize(Sender: TObject);
-begin
-  Bevel2.Width := (Form1.Width div 2) - 6;
-  Bevel3.Width := Bevel2.Width;
-end;
-
 procedure TForm1.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
   b: byte;
@@ -414,47 +419,4 @@ begin
 end;
 
 end.
-
-{
-
-távoli mért értékek
-a. MM7D  hőmérséklet
-b. MM7D  relatív páratartalom
-c. MM7D  relatív gázkoncentráció
-
-távoli állapotok
-d. MM6D  működési mód           0/1     átszövetés/termesztés
-e. MM6D  kézi üzem              0/1     sárga LED
-f. MM6D  túláramvédelem         0/1     piros LED
-g. MM6D  riasztó                0/1     piros LED
-
-távoli kimenetek
-h. MM6D  világłtás              0/1     zöld LED
-i. MM6D  szellőztetés           0/1     zöld LED
-j. MM6D  fűtés                  0/1     zöld LED
-k. MM7D  zöld állapotjelző      0/1     zöld LED
-l. MM7D  sárga állapotjelző     0/1     sárga LED
-n. MM7D  piros állapotjelző     0/1     piros LED
-
-log: date time a b c d e f g h i j k l m n
-
-
-Label3.Caption := '0 °C';
-Label4.Caption := '0 %';
-// LEDs
-ledoff := clGreen;
-Shape3.Brush.Color := ledoff;
-Shape4.Brush.Color := ledoff;
-Shape5.Brush.Color := ledoff;
-Shape6.Brush.Color := ledoff;
-ledoff := clMaroon;
-Shape7.Brush.Color := ledoff;
-Shape8.Brush.Color := ledoff;
-Shape9.Brush.Color := ledoff;
-Shape10.Brush.Color := ledoff;
-ledoff := clOlive;
-Shape11.Brush.Color := ledoff;
-Shape12.Brush.Color := ledoff;
-Shape13.Brush.Color := ledoff;
-Shape14.Brush.Color := ledoff; }
 

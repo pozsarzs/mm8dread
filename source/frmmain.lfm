@@ -6,8 +6,8 @@ object Form1: TForm1
   Caption = 'Form1'
   ClientHeight = 579
   ClientWidth = 412
-  Constraints.MinHeight = 550
-  Constraints.MinWidth = 306
+  Constraints.MinHeight = 579
+  Constraints.MinWidth = 412
   Icon.Data = {
     BE0800000000010001002020000001000800A808000016000000280000002000
     0000400000000100080000000000000000000000000000000000000000000000
@@ -83,7 +83,6 @@ object Form1: TForm1
   }
   OnClose = FormClose
   OnCreate = FormCreate
-  OnResize = FormResize
   Position = poDefaultPosOnly
   LCLVersion = '1.8.4.0'
   object ComboBox1: TComboBox
@@ -903,8 +902,6 @@ object Form1: TForm1
           ParentFont = False
         end
         object GroupBox6: TGroupBox
-          AnchorSideLeft.Control = Bevel2
-          AnchorSideLeft.Side = asrBottom
           AnchorSideTop.Control = GroupBox1
           AnchorSideRight.Control = GroupBox1
           AnchorSideRight.Side = asrBottom
