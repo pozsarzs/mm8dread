@@ -7,7 +7,7 @@ GitHub: <https://github.com/pozsarzs/mm8dread>
 
 **Software**
 
- - architecture:       i386
+ - architecture:       armhf, i386
  - operation system:   Linux, Windows
  - version:            v0.1
  - language:           en
