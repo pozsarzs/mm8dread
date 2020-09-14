@@ -108,10 +108,6 @@ msgctxt "TFORM1.LABEL28.CAPTION"
 msgid "Last change:"
 msgstr ""
 
-#: tform1.label3.caption
-msgid "0 °C"
-msgstr ""
-
 #: tform1.label31.caption
 msgid "Good values"
 msgstr ""
@@ -137,11 +133,6 @@ msgctxt "TFORM1.LABEL39.CAPTION"
 msgid "Alarm event detected"
 msgstr ""
 
-#: tform1.label4.caption
-msgctxt "tform1.label4.caption"
-msgid "0 %"
-msgstr ""
-
 #: tform1.label40.caption
 msgid "Lamps"
 msgstr ""
@@ -152,11 +143,6 @@ msgstr ""
 
 #: tform1.label42.caption
 msgid "Heaters"
-msgstr ""
-
-#: tform1.label5.caption
-msgctxt "TFORM1.LABEL5.CAPTION"
-msgid "0 %"
 msgstr ""
 
 #: tform1.label6.caption

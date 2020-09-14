@@ -1,0 +1,11 @@
+544651a0816c3f36bb33a8c57ebf6d25  usr/bin/mm8dread
+8f6bcde97d4112c1381224ebf38f45f5  usr/share/applications/mm8dread.desktop
+4994f4cacf022e01ffda29f5627f7ab5  usr/share/doc/mm8dread/AUTHORS
+c8fb9e658b6ad2a4084068e005ae214d  usr/share/doc/mm8dread/changelog.Debian.gz
+f4492b6846071e6b1fe1f801cb82f9b2  usr/share/doc/mm8dread/copyright
+2866eda4195190a5b8031f79bc2efc82  usr/share/doc/mm8dread/README
+e95b902a1037d461ca0e94f2bddf7a28  usr/share/doc/mm8dread/VERSION
+2c32d6b32d3185306979c6cb9c6aea21  usr/share/locale/hu/LC_MESSAGES/mm8dread.mo
+edb5c552d92856544ac63a93837f8bb1  usr/share/man/man1/mm8dread.1.gz
+5538ea090c18d42b1a12fae08d571c69  usr/share/menu/mm8dread
+103da7d9d3ed00f1433816a8405ca64e  usr/share/pixmaps/mm8dread.xpm

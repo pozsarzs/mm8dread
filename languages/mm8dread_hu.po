@@ -1,0 +1,175 @@
+msgid ""
+msgstr "Content-Type: text/plain; charset=UTF-8"
+
+#: frmmain.message01
+msgid "Cannot read configuration file!"
+msgstr "A beállításfájl nem olvasható!"
+
+#: frmmain.message02
+msgid "Cannot write configuration file!"
+msgstr "A beállításfájl nem írható!"
+
+#: frmmain.message03
+msgid "Cannot read data from this URL!"
+msgstr "Nem tudok adatokat beolvasni erről az URL-ről!"
+
+#: frmmain.message04
+msgid "Not compatible controller!"
+msgstr "Nem kompatibilis vezérlő!"
+
+#: frmmain.message05
+msgid "Bad data!"
+msgstr "Rossz adat"
+
+#: frmmain.message06
+msgid "Growing mushroom"
+msgstr "Gombatermesztés"
+
+#: frmmain.message07
+msgid "Growing hyphae"
+msgstr "Átszövetés"
+
+#: tform1.combobox2.hint
+msgid "Number of channel"
+msgstr "Csatorna száma"
+
+#: tform1.combobox2.text
+msgid "Channel #1"
+msgstr "Csatorna #1"
+
+#: tform1.groupbox4.caption
+msgid "Mains voltage"
+msgstr "Hálózati feszültség"
+
+#: tform1.groupbox5.caption
+msgid "Alarm"
+msgstr "Riasztó"
+
+#: tform1.groupbox6.caption
+msgid "Status signs"
+msgstr "Állapotjelzők"
+
+#: tform1.groupbox8.caption
+msgid "Status"
+msgstr "Állapot"
+
+#: tform1.groupbox9.caption
+msgid "Outputs"
+msgstr "Kimenetek"
+
+#: tform1.label1.caption
+msgid "Temperature"
+msgstr "Hőmérséklet"
+
+#: tform1.label17.caption
+msgid "Master controller"
+msgstr "Fő vezérlő"
+
+#: tform1.label18.caption
+msgctxt "tform1.label18.caption"
+msgid "Last change:"
+msgstr "Utolsó változás:"
+
+#: tform1.label2.caption
+msgid "Relative humidity"
+msgstr "Relatív páratartalom"
+
+#: tform1.label20.caption
+msgid "No mains voltage"
+msgstr "Nincs hálózati feszültség"
+
+#: tform1.label21.caption
+msgid "Opened overcurrent breaker #1"
+msgstr "Nyitott túláramvédelem #1"
+
+#: tform1.label22.caption
+msgid "Opened overcurrent breaker #2"
+msgstr "Nyitott túláramvédelem #2"
+
+#: tform1.label23.caption
+msgid "Opened overcurrent breaker #3"
+msgstr "Nyitott túláramvédelem #3"
+
+#: tform1.label24.caption
+msgctxt "tform1.label24.caption"
+msgid "Alarm event detected"
+msgstr "Riasztási esemény érzékelve"
+
+#: tform1.label25.caption
+msgid "The siren is working now"
+msgstr "A hangjelző működik"
+
+#: tform1.label27.caption
+msgid "Slave controller pair"
+msgstr "Segédvezérlő pár"
+
+#: tform1.label28.caption
+msgctxt "TFORM1.LABEL28.CAPTION"
+msgid "Last change:"
+msgstr "Utolsó változás"
+
+#: tform1.label31.caption
+msgid "Good values"
+msgstr "Jó értékek"
+
+#: tform1.label32.caption
+msgid "Out of optimal range"
+msgstr "Kívül az optimális értékeken"
+
+#: tform1.label33.caption
+msgid "Bad values"
+msgstr "Rossz értékek"
+
+#: tform1.label37.caption
+msgid "Manual operation"
+msgstr "Kézi működtetés"
+
+#: tform1.label38.caption
+msgid "Opened overcurrent breaker"
+msgstr "Nyitott túláramvédelem"
+
+#: tform1.label39.caption
+msgctxt "TFORM1.LABEL39.CAPTION"
+msgid "Alarm event detected"
+msgstr "Riasztási esemény érzékelve"
+
+#: tform1.label40.caption
+msgid "Lamps"
+msgstr "Világítás"
+
+#: tform1.label41.caption
+msgid "Ventilators"
+msgstr "Ventilátor"
+
+#: tform1.label42.caption
+msgid "Heaters"
+msgstr "Fűtés"
+
+#: tform1.label6.caption
+msgid "Relative gas concentrate"
+msgstr "Relatív gáz koncentráció"
+
+#: tform1.label7.caption
+msgid "Operation mode:"
+msgstr "Működési mód:"
+
+#: tform1.speedbutton1.hint
+msgid "Read data from device"
+msgstr "Adat olvasása az eszközről"
+
+#: tform1.speedbutton2.hint
+msgid "Add URL to list"
+msgstr "URL hozzáadása a listához"
+
+#: tform1.speedbutton3.hint
+msgid "Remove URL from list"
+msgstr "URL eltávolítása a listából"
+
+#: tform1.tabsheet1.caption
+msgid "Channel #0"
+msgstr "Csatorna #0"
+
+#: tform1.tabsheet2.caption
+msgid "Channel #?"
+msgstr "Csatorna #?"
+
