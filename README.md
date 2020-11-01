@@ -1,4 +1,4 @@
-**MM8DRead * Status reader program for MM8D/RPI device**  
+**MM8DRead * Status reader program for MM8D device**  
 Copyright (C) 2020 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>  
 Homepage: <http://www.szerafingomba.hu/softwares/>  
 GitHub: <https://github.com/pozsarzs/mm8dread>
