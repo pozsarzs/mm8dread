@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CONFIG>
   <ProjectOptions>
-    <Version Value="9"/>
+    <Version Value="10"/>
     <General>
       <SessionStorage Value="InProjectDir"/>
       <MainUnit Value="0"/>
@@ -16,8 +16,8 @@
     </i18n>
     <VersionInfo>
       <UseVersionInfo Value="True"/>
-      <MinorVersionNr Value="1"/>
-      <StringTable Comments="Status reader program for MM8D device" CompanyName="Pozsar Zsolt" LegalCopyright="(C) 2020 Pozsar Zsolt" ProductName="MM8DRead" ProductVersion="0.1"/>
+      <MinorVersionNr Value="2"/>
+      <StringTable Comments="Status reader program for MM8D device" CompanyName="Pozsar Zsolt" LegalCopyright="(C) 2020-2021 Pozsar Zsolt" ProductName="MM8DRead" ProductVersion="0.2"/>
     </VersionInfo>
     <BuildModes Count="1">
       <Item1 Name="Default" Default="True"/>

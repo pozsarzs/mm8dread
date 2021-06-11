@@ -116,7 +116,7 @@ msgid "Manual operation"
 msgstr "Kézi működtetés"
 
 #: tform1.label38.caption
-msgid "Opened overcurrent breaker"
+msgid "Opened breaker"
 msgstr "Nyitott túláramvédelem"
 
 #: tform1.label39.caption

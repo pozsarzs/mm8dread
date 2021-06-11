@@ -1,6 +1,6 @@
 # +----------------------------------------------------------------------------+
-# | MM8DRead v0.1 * Status reader program for MM8D device                      |
-# | Copyright (C) 2020 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>            |
+# | MM8DRead v0.2 * Status reader program for MM5D device                      |
+# | Copyright (C) 2020-2021 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>       |
 # | Makefile                                                                   |
 # | Makefile for Unix-like systems                                             |
 # +----------------------------------------------------------------------------+
