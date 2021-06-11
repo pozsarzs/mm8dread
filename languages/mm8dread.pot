@@ -90,15 +90,6 @@ msgstr ""
 msgid "Opened overcurrent breaker #3"
 msgstr ""
 
-#: tform1.label24.caption
-msgctxt "tform1.label24.caption"
-msgid "Alarm event detected"
-msgstr ""
-
-#: tform1.label25.caption
-msgid "The siren is working now"
-msgstr ""
-
 #: tform1.label27.caption
 msgid "Slave controller pair"
 msgstr ""
@@ -125,12 +116,12 @@ msgid "Manual operation"
 msgstr ""
 
 #: tform1.label38.caption
-msgid "Opened overcurrent breaker"
+msgid "Opened breaker"
 msgstr ""
 
 #: tform1.label39.caption
 msgctxt "TFORM1.LABEL39.CAPTION"
-msgid "Alarm event detected"
+msgid "Alarm"
 msgstr ""
 
 #: tform1.label40.caption

@@ -1,6 +1,6 @@
 { +--------------------------------------------------------------------------+ }
-{ | MM8DRead v0.1 * Status reader program for MM8D/RPI device                | }
-{ | Copyright (C) 2020 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>          | }
+{ | MM8DRead v0.2 * Status reader program for MM8D device                    | }
+{ | Copyright (C) 2020-2021 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>     | }
 { | untcommonproc.pas                                                        | }
 { | Common functions and procedures                                          | }
 { +--------------------------------------------------------------------------+ }
@@ -60,9 +60,10 @@ begin
   getdatafromdevice := True;
   value0.Clear;
   value1.Clear;
+  value2.Clear;
   with THTTPSend.Create do
   begin
-    if not HttpGetText(url + '?uid=' + uid + '&value=0', value0) then
+    if not HttpGetText(url + '?uid=' + uid + '&value=0&channel=0', value0) then
       getdatafromdevice := False;
     if not HttpGetText(url + '?uid=' + uid + '&value=2&channel=0', value1) then
       getdatafromdevice := False;

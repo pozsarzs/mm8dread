@@ -1,6 +1,6 @@
 { +--------------------------------------------------------------------------+ }
-{ | MM8DRead v0.1 * Status reader program for MM8D/RPI device                | }
-{ | Copyright (C) 2020 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>          | }
+{ | MM8DRead v0.2 * Status reader program for MM8D device                    | }
+{ | Copyright (C) 2020-2021 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>     | }
 { | frmmain.pas                                                              | }
 { | Main form                                                                | }
 { +--------------------------------------------------------------------------+ }
@@ -30,11 +30,6 @@ type
     Bevel18: TBevel;
     Bevel19: TBevel;
     Bevel2: TBevel;
-    Bevel20: TBevel;
-    Bevel21: TBevel;
-    Bevel22: TBevel;
-    Bevel23: TBevel;
-    Bevel24: TBevel;
     Bevel28: TBevel;
     Bevel29: TBevel;
     Bevel3: TBevel;
@@ -49,8 +44,6 @@ type
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
     GroupBox4: TGroupBox;
-    GroupBox5: TGroupBox;
-    GroupBox6: TGroupBox;
     GroupBox8: TGroupBox;
     GroupBox9: TGroupBox;
     Label1: TLabel;
@@ -62,17 +55,12 @@ type
     Label21: TLabel;
     Label22: TLabel;
     Label23: TLabel;
-    Label24: TLabel;
-    Label25: TLabel;
     Label26: TLabel;
     Label27: TLabel;
     Label28: TLabel;
     Label29: TLabel;
     Label3: TLabel;
     Label30: TLabel;
-    Label31: TLabel;
-    Label32: TLabel;
-    Label33: TLabel;
     Label37: TLabel;
     Label38: TLabel;
     Label39: TLabel;
@@ -90,12 +78,7 @@ type
     Shape16: TShape;
     Shape17: TShape;
     Shape18: TShape;
-    Shape19: TShape;
     Shape2: TShape;
-    Shape20: TShape;
-    Shape21: TShape;
-    Shape22: TShape;
-    Shape23: TShape;
     Shape27: TShape;
     Shape28: TShape;
     Shape29: TShape;
@@ -152,13 +135,13 @@ begin
   if not good then
     ShowMessage(MESSAGE03);
   if good then
-    if (value0.Count < 3) or (value1.Count < 9) or (value2.Count < 16) then
+    if (value0.Count < 2) or (value1.Count < 9) or (value2.Count < 17) then
     begin
       good := False;
       ShowMessage(MESSAGE05);
     end;
   if good then
-    if (value0.Strings[0] <> 'MM8D/RPI') or (value0.Strings[1] <> 'v0.1') then
+    if (value0.Strings[0] <> 'MM8D') or (value0.Strings[1] <> 'v0.1') then
     begin
       good := False;
       ShowMessage(MESSAGE04);
@@ -168,7 +151,6 @@ begin
     ComboBox2Change(Sender);
     // Status bar
     StatusBar1.Panels.Items[0].Text := '';
-    Form1.Caption := APPNAME + ' v' + VERSION;
   end
   else
   begin
@@ -193,17 +175,9 @@ begin
       Shape18.Brush.Color := ledon
     else
       Shape18.Brush.Color := ledoff;
-    if value1.Strings[7] = '1' then
-      Shape19.Brush.Color := ledon
-    else
-      Shape19.Brush.Color := ledoff;
-    if value1.Strings[8] = '1' then
-      Shape20.Brush.Color := ledon
-    else
-      Shape20.Brush.Color := ledoff;
     // Other channels
     Label30.Caption := value2.Strings[0];
-    Label29.Caption := value2.Strings[1] + ' ' + value1.Strings[2];
+    Label29.Caption := value2.Strings[1] + ' ' + value2.Strings[2];
     // MM7D
     format.DecimalSeparator := '.';
     trystrtofloat(value2.Strings[3], t, format);
@@ -226,60 +200,43 @@ begin
       Label5.Caption := '0 %';
     ledoff := clGreen;
     ledon := clLime;
-    if value2.Strings[6] = '1' then
-      Shape21.Brush.Color := ledon
-    else
-      Shape21.Brush.Color := ledoff;
-    ledoff := clOlive;
-    ledon := clYellow;
-    if value2.Strings[7] = '1' then
-      Shape22.Brush.Color := ledon
-    else
-      Shape22.Brush.Color := ledoff;
-    ledoff := clMaroon;
-    ledon := clRed;
-    if value2.Strings[8] = '1' then
-      Shape23.Brush.Color := ledon
-    else
-      Shape23.Brush.Color := ledoff;
     // MM6D
-    if value2.Strings[9] = '1' then
+    if value2.Strings[6] = '1' then
       Label8.Caption := MESSAGE06
     else
       Label8.Caption := MESSAGE07;
     ledoff := clOlive;
     ledon := clYellow;
-    if value2.Strings[10] = '1' then
+    if value2.Strings[7] = '1' then
       Shape27.Brush.Color := ledon
     else
       Shape27.Brush.Color := ledoff;
     ledoff := clMaroon;
     ledon := clRed;
-    if value2.Strings[11] = '1' then
+    if value2.Strings[8] = '1' then
       Shape28.Brush.Color := ledon
     else
       Shape28.Brush.Color := ledoff;
-    if value2.Strings[12] = '1' then
+    if value2.Strings[9] = '1' then
       Shape29.Brush.Color := ledon
     else
       Shape29.Brush.Color := ledoff;
     ledoff := clGreen;
     ledon := clLime;
-    if value2.Strings[13] = '1' then
+    if value2.Strings[10] = '1' then
       Shape30.Brush.Color := ledon
     else
       Shape30.Brush.Color := ledoff;
-    if value2.Strings[14] = '1' then
+    if value2.Strings[11] = '1' then
       Shape31.Brush.Color := ledon
     else
       Shape31.Brush.Color := ledoff;
-    if value2.Strings[15] = '1' then
+    if value2.Strings[12] = '1' then
       Shape32.Brush.Color := ledon
     else
       Shape32.Brush.Color := ledoff;
     // Status bar
-    StatusBar1.Panels.Items[0].Text := value0.Strings[0] + ' ' + value0.Strings[1];
-    Form1.Caption := APPNAME + ' v' + VERSION + ' | ' + value0.Strings[2];
+    StatusBar1.Panels.Items[0].Text := ' ' + value0.Strings[0] + ' ' + value0.Strings[1];
   end;
 end;
 
@@ -341,8 +298,6 @@ begin
   Shape16.Brush.Color := ledoff;
   Shape17.Brush.Color := ledoff;
   Shape18.Brush.Color := ledoff;
-  Shape19.Brush.Color := ledoff;
-  Shape20.Brush.Color := ledoff;
   // Other channels
   Label29.Caption := '';
   Label30.Caption := '';
@@ -350,12 +305,6 @@ begin
   Label3.Caption := '0°C';
   Label4.Caption := '0%';
   Label5.Caption := '0%';
-  ledoff := clGreen;
-  Shape21.Brush.Color := ledoff;
-  ledoff := clOlive;
-  Shape22.Brush.Color := ledoff;
-  ledoff := clMaroon;
-  Shape23.Brush.Color := ledoff;
   // MM6D
   Label8.Caption := '';
   ledoff := clOlive;
@@ -369,7 +318,6 @@ begin
   Shape32.Brush.Color := ledoff;
   // Status bar
   StatusBar1.Panels.Items[0].Text := '';
-  Form1.Caption := APPNAME + ' v' + VERSION;
 end;
 
 // events of Form1

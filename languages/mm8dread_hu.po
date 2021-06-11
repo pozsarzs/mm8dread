@@ -90,15 +90,6 @@ msgstr "Nyitott túláramvédelem #2"
 msgid "Opened overcurrent breaker #3"
 msgstr "Nyitott túláramvédelem #3"
 
-#: tform1.label24.caption
-msgctxt "tform1.label24.caption"
-msgid "Alarm event detected"
-msgstr "Riasztási esemény érzékelve"
-
-#: tform1.label25.caption
-msgid "The siren is working now"
-msgstr "A hangjelző működik"
-
 #: tform1.label27.caption
 msgid "Slave controller pair"
 msgstr "Segédvezérlő pár"
@@ -131,7 +122,7 @@ msgstr "Nyitott túláramvédelem"
 #: tform1.label39.caption
 msgctxt "TFORM1.LABEL39.CAPTION"
 msgid "Alarm event detected"
-msgstr "Riasztási esemény érzékelve"
+msgstr "Riasztás"
 
 #: tform1.label40.caption
 msgid "Lamps"

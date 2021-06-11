@@ -1,0 +1,12 @@
+mm8dread (0.2) unstable; urgency=low
+
+  * Bugfixing
+  * Removed unused LEDs.
+
+ -- Pozsar Zsolt <pozsar.zsolt@szerafingomba.hu>  Fri, 11 Jun 2021 09:00:00
+
+mm8dread (0.1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Pozsar Zsolt <pozsar.zsolt@szerafingomba.hu>  Mon, 14 Sep 2020 00:00:00
