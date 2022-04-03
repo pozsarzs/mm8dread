@@ -141,7 +141,7 @@ begin
       ShowMessage(MESSAGE05);
     end;
   if good then
-    if (value0.Strings[0] <> 'MM8D') or (value0.Strings[1] <> 'v0.1') then
+    if (value0.Strings[0] <> 'MM8D') or (value0.Strings[1] <> 'v0.3') then
     begin
       good := False;
       ShowMessage(MESSAGE04);
@@ -236,7 +236,7 @@ begin
     else
       Shape32.Brush.Color := ledoff;
     // Status bar
-    StatusBar1.Panels.Items[0].Text := ' ' + value0.Strings[0] + ' ' + value0.Strings[1];
+    StatusBar1.Panels.Items[0].Text := ' ' + value0.Strings[0] + ' v' + value0.Strings[1];
   end;
 end;
 

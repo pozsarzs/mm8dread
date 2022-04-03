@@ -19,7 +19,7 @@
         <ResourceBaseClass Value="Form"/>
         <IsVisibleTab Value="True"/>
         <EditorIndex Value="2"/>
-        <TopLine Value="302"/>
+        <TopLine Value="325"/>
         <CursorPos X="11" Y="320"/>
         <UsageCount Value="51"/>
         <Loaded Value="True"/>
@@ -28,7 +28,7 @@
       <Unit2>
         <Filename Value="untcommonproc.pas"/>
         <EditorIndex Value="1"/>
-        <CursorPos X="4" Y="2"/>
+        <CursorPos Y="7"/>
         <UsageCount Value="22"/>
         <Loaded Value="True"/>
       </Unit2>
