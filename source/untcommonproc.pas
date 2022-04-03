@@ -68,6 +68,7 @@ begin
     if not HttpGetText(url + '/cgi-bin/getdata.cgi?uid=' + uid + '&value=2&channel=0', value1) then
       getdatafromdevice := False;
     if not HttpGetText(url + '/cgi-bin/getdata.cgi?uid=' + uid + '&value=2&channel=' + inttostr(channel), value2) then
+
       getdatafromdevice := False;
     Free;
   end;

@@ -30,6 +30,8 @@ type
     Bevel18: TBevel;
     Bevel19: TBevel;
     Bevel2: TBevel;
+    Bevel20: TBevel;
+    Bevel21: TBevel;
     Bevel28: TBevel;
     Bevel29: TBevel;
     Bevel3: TBevel;
@@ -38,27 +40,32 @@ type
     Bevel32: TBevel;
     Bevel33: TBevel;
     Bevel4: TBevel;
+    Bevel5: TBevel;
+    Bevel6: TBevel;
     ComboBox1: TComboBox;
     ComboBox2: TComboBox;
     Edit1: TEdit;
     GroupBox1: TGroupBox;
     GroupBox2: TGroupBox;
+    GroupBox3: TGroupBox;
     GroupBox4: TGroupBox;
+    GroupBox5: TGroupBox;
+    GroupBox6: TGroupBox;
     GroupBox8: TGroupBox;
     GroupBox9: TGroupBox;
     Label1: TLabel;
+    Label10: TLabel;
     Label17: TLabel;
-    Label18: TLabel;
     Label19: TLabel;
     Label2: TLabel;
     Label20: TLabel;
     Label21: TLabel;
     Label22: TLabel;
     Label23: TLabel;
+    Label24: TLabel;
+    Label25: TLabel;
     Label26: TLabel;
     Label27: TLabel;
-    Label28: TLabel;
-    Label29: TLabel;
     Label3: TLabel;
     Label30: TLabel;
     Label37: TLabel;
@@ -72,13 +79,16 @@ type
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
+    Label9: TLabel;
     PageControl1: TPageControl;
     Shape1: TShape;
     Shape15: TShape;
     Shape16: TShape;
     Shape17: TShape;
     Shape18: TShape;
+    Shape19: TShape;
     Shape2: TShape;
+    Shape20: TShape;
     Shape27: TShape;
     Shape28: TShape;
     Shape29: TShape;
@@ -86,6 +96,7 @@ type
     Shape30: TShape;
     Shape31: TShape;
     Shape32: TShape;
+    Shape4: TShape;
     SpeedButton1: TSpeedButton;
     SpeedButton2: TSpeedButton;
     SpeedButton3: TSpeedButton;
@@ -96,6 +107,7 @@ type
     procedure ComboBox2Change(Sender: TObject);
     procedure FormClose(Sender: TObject; var CloseAction: TCloseAction);
     procedure FormCreate(Sender: TObject);
+    procedure PageControl1Change(Sender: TObject);
     procedure SpeedButton1Click(Sender: TObject);
     procedure SpeedButton2Click(Sender: TObject);
     procedure SpeedButton3Click(Sender: TObject);
@@ -135,7 +147,7 @@ begin
   if not good then
     ShowMessage(MESSAGE03);
   if good then
-    if (value0.Count < 2) or (value1.Count < 9) or (value2.Count < 17) then
+    if (value0.Count < 2) or (value1.Count < 10) or (value2.Count < 13) then
     begin
       good := False;
       ShowMessage(MESSAGE05);
@@ -151,12 +163,12 @@ begin
     ComboBox2Change(Sender);
     // Status bar
     StatusBar1.Panels.Items[0].Text := '';
+    StatusBar1.Panels.Items[1].Text := '';
   end
   else
   begin
     // Channel #0
     Label26.Caption := value1.Strings[0];
-    Label19.Caption := value1.Strings[1] + ' ' + value1.Strings[2];
     ledoff := clMaroon;
     ledon := clred;
     if value1.Strings[3] = '1' then
@@ -171,13 +183,28 @@ begin
       Shape17.Brush.Color := ledon
     else
       Shape17.Brush.Color := ledoff;
-    if value1.Strings[6] = '1' then
+    ledoff := clOlive;
+    ledon := clYellow;
+    if value1.Strings[7] = '1' then
       Shape18.Brush.Color := ledon
     else
       Shape18.Brush.Color := ledoff;
+    if value1.Strings[8] = '1' then
+      Shape19.Brush.Color := ledon
+    else
+      Shape19.Brush.Color := ledoff;
+    if value1.Strings[9] = '1' then
+      Shape20.Brush.Color := ledon
+    else
+      Shape20.Brush.Color := ledoff;
+    trystrtofloat(value1.Strings[6], t, format);
+    t := round(t);
+    if (t >= -50) and (t < 100) then
+      Label9.Caption := floattostr(t) + ' °C'
+    else
+      Label9.Caption := '0 °C';
     // Other channels
     Label30.Caption := value2.Strings[0];
-    Label29.Caption := value2.Strings[1] + ' ' + value2.Strings[2];
     // MM7D
     format.DecimalSeparator := '.';
     trystrtofloat(value2.Strings[3], t, format);
@@ -201,7 +228,7 @@ begin
     ledoff := clGreen;
     ledon := clLime;
     // MM6D
-    if value2.Strings[6] = '1' then
+    if value2.Strings[6] = '0' then
       Label8.Caption := MESSAGE06
     else
       Label8.Caption := MESSAGE07;
@@ -236,7 +263,8 @@ begin
     else
       Shape32.Brush.Color := ledoff;
     // Status bar
-    StatusBar1.Panels.Items[0].Text := ' ' + value0.Strings[0] + ' v' + value0.Strings[1];
+    StatusBar1.Panels.Items[0].Text := ' ' + value0.Strings[0] + ' ' + value0.Strings[1];
+    PageControl1Change(Sender)
   end;
 end;
 
@@ -297,9 +325,12 @@ begin
   Shape15.Brush.Color := ledoff;
   Shape16.Brush.Color := ledoff;
   Shape17.Brush.Color := ledoff;
+  ledoff := clOlive;
   Shape18.Brush.Color := ledoff;
+  Shape19.Brush.Color := ledoff;
+  Shape20.Brush.Color := ledoff;
+  Label9.Caption := '0°C';
   // Other channels
-  Label29.Caption := '';
   Label30.Caption := '';
   // MM7D
   Label3.Caption := '0°C';
@@ -318,6 +349,7 @@ begin
   Shape32.Brush.Color := ledoff;
   // Status bar
   StatusBar1.Panels.Items[0].Text := '';
+  StatusBar1.Panels.Items[1].Text := '';
 end;
 
 // events of Form1
@@ -349,6 +381,17 @@ begin
   ComboBox2Change(Sender);
 end;
 
+procedure TForm1.PageControl1Change(Sender: TObject);
+begin
+  if (value1.Count > 3) and (value2.Count > 3) then
+    if PageControl1.ActivePageIndex = 0 then
+      StatusBar1.Panels.Items[1].Text :=
+        ' ' + value1.Strings[1] + ' ' + value1.Strings[2]
+    else
+      StatusBar1.Panels.Items[1].Text :=
+        ' ' + value2.Strings[1] + ' ' + value2.Strings[2];
+end;
+
 procedure TForm1.FormClose(Sender: TObject; var CloseAction: TCloseAction);
 var
   b: byte;
@@ -367,4 +410,3 @@ begin
 end;
 
 end.
-
