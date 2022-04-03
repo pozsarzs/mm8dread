@@ -29,6 +29,10 @@ msgstr ""
 msgid "Growing hyphae"
 msgstr ""
 
+#: tform1.combobox1.hint
+msgid "URL"
+msgstr ""
+
 #: tform1.combobox2.hint
 msgid "Number of channel"
 msgstr ""
@@ -37,23 +41,47 @@ msgstr ""
 msgid "Channel #1"
 msgstr ""
 
+#: tform1.edit1.hint
+msgid "UID"
+msgstr ""
+
+#: tform1.edit1.text
+msgid "00000000"
+msgstr ""
+
+#: tform1.groupbox1.caption
+msgid "MM7D"
+msgstr ""
+
+#: tform1.groupbox2.caption
+msgid "MM6D"
+msgstr ""
+
+#: tform1.groupbox3.caption
+msgctxt "TFORM1.GROUPBOX3.CAPTION"
+msgid "Status"
+msgstr ""
+
 #: tform1.groupbox4.caption
-msgid "Mains voltage"
+msgid "MM8D"
 msgstr ""
 
 #: tform1.groupbox5.caption
-msgid "Alarm"
+msgctxt "TFORM1.GROUPBOX5.CAPTION"
+msgid "Outputs"
 msgstr ""
 
 #: tform1.groupbox6.caption
-msgid "Status signs"
+msgid "Others"
 msgstr ""
 
 #: tform1.groupbox8.caption
+msgctxt "tform1.groupbox8.caption"
 msgid "Status"
 msgstr ""
 
 #: tform1.groupbox9.caption
+msgctxt "tform1.groupbox9.caption"
 msgid "Outputs"
 msgstr ""
 
@@ -61,13 +89,12 @@ msgstr ""
 msgid "Temperature"
 msgstr ""
 
-#: tform1.label17.caption
-msgid "Master controller"
+#: tform1.label10.caption
+msgid "Outdoor temperature"
 msgstr ""
 
-#: tform1.label18.caption
-msgctxt "tform1.label18.caption"
-msgid "Last change:"
+#: tform1.label17.caption
+msgid "Master controller"
 msgstr ""
 
 #: tform1.label2.caption
@@ -75,40 +102,36 @@ msgid "Relative humidity"
 msgstr ""
 
 #: tform1.label20.caption
-msgid "No mains voltage"
+msgid "Opened overcurrent breaker"
 msgstr ""
 
 #: tform1.label21.caption
-msgid "Opened overcurrent breaker #1"
+msgid "Water pump error (no water)"
 msgstr ""
 
 #: tform1.label22.caption
-msgid "Opened overcurrent breaker #2"
+msgid "Water pump error (clogging)"
 msgstr ""
 
 #: tform1.label23.caption
-msgid "Opened overcurrent breaker #3"
+msgid "Irrigator tube #1"
+msgstr ""
+
+#: tform1.label24.caption
+msgid "Irrigator tube #2"
+msgstr ""
+
+#: tform1.label25.caption
+msgid "Irrigator tube #3"
 msgstr ""
 
 #: tform1.label27.caption
 msgid "Slave controller pair"
 msgstr ""
 
-#: tform1.label28.caption
-msgctxt "TFORM1.LABEL28.CAPTION"
-msgid "Last change:"
-msgstr ""
-
-#: tform1.label31.caption
-msgid "Good values"
-msgstr ""
-
-#: tform1.label32.caption
-msgid "Out of optimal range"
-msgstr ""
-
-#: tform1.label33.caption
-msgid "Bad values"
+#: tform1.label3.caption
+msgctxt "tform1.label3.caption"
+msgid "0 °C"
 msgstr ""
 
 #: tform1.label37.caption
@@ -120,8 +143,12 @@ msgid "Opened breaker"
 msgstr ""
 
 #: tform1.label39.caption
-msgctxt "TFORM1.LABEL39.CAPTION"
 msgid "Alarm"
+msgstr ""
+
+#: tform1.label4.caption
+msgctxt "tform1.label4.caption"
+msgid "0 %"
 msgstr ""
 
 #: tform1.label40.caption
@@ -136,12 +163,22 @@ msgstr ""
 msgid "Heaters"
 msgstr ""
 
+#: tform1.label5.caption
+msgctxt "TFORM1.LABEL5.CAPTION"
+msgid "0 %"
+msgstr ""
+
 #: tform1.label6.caption
 msgid "Relative gas concentrate"
 msgstr ""
 
 #: tform1.label7.caption
 msgid "Operation mode:"
+msgstr ""
+
+#: tform1.label9.caption
+msgctxt "TFORM1.LABEL9.CAPTION"
+msgid "0 °C"
 msgstr ""
 
 #: tform1.speedbutton1.hint

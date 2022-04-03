@@ -1,5 +1,15 @@
 msgid ""
-msgstr "Content-Type: text/plain; charset=UTF-8"
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Pozsár Zsolt <pozsarzs@gmail.com>\n"
+"Language-Team: \n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.11\n"
 
 #: frmmain.message01
 msgid "Cannot read configuration file!"
@@ -29,6 +39,10 @@ msgstr "Gombatermesztés"
 msgid "Growing hyphae"
 msgstr "Átszövetés"
 
+#: tform1.combobox1.hint
+msgid "URL"
+msgstr "URL"
+
 #: tform1.combobox2.hint
 msgid "Number of channel"
 msgstr "Csatorna száma"
@@ -37,23 +51,47 @@ msgstr "Csatorna száma"
 msgid "Channel #1"
 msgstr "Csatorna #1"
 
+#: tform1.edit1.hint
+msgid "UID"
+msgstr "UID"
+
+#: tform1.edit1.text
+msgid "00000000"
+msgstr "00000000"
+
+#: tform1.groupbox1.caption
+msgid "MM7D"
+msgstr "MM7D"
+
+#: tform1.groupbox2.caption
+msgid "MM6D"
+msgstr "MM6D"
+
+#: tform1.groupbox3.caption
+msgctxt "TFORM1.GROUPBOX3.CAPTION"
+msgid "Status"
+msgstr "Állapot"
+
 #: tform1.groupbox4.caption
-msgid "Mains voltage"
-msgstr "Hálózati feszültség"
+msgid "MM8D"
+msgstr "MM8D"
 
 #: tform1.groupbox5.caption
-msgid "Alarm"
-msgstr "Riasztó"
+msgctxt "TFORM1.GROUPBOX5.CAPTION"
+msgid "Outputs"
+msgstr "Kimenetek"
 
 #: tform1.groupbox6.caption
-msgid "Status signs"
-msgstr "Állapotjelzők"
+msgid "Others"
+msgstr "Egyéb"
 
 #: tform1.groupbox8.caption
+msgctxt "tform1.groupbox8.caption"
 msgid "Status"
 msgstr "Állapot"
 
 #: tform1.groupbox9.caption
+msgctxt "tform1.groupbox9.caption"
 msgid "Outputs"
 msgstr "Kimenetek"
 
@@ -61,55 +99,50 @@ msgstr "Kimenetek"
 msgid "Temperature"
 msgstr "Hőmérséklet"
 
+#: tform1.label10.caption
+msgid "Outdoor temperature"
+msgstr "Külső hőmérséklet"
+
 #: tform1.label17.caption
 msgid "Master controller"
 msgstr "Fő vezérlő"
-
-#: tform1.label18.caption
-msgctxt "tform1.label18.caption"
-msgid "Last change:"
-msgstr "Utolsó változás:"
 
 #: tform1.label2.caption
 msgid "Relative humidity"
 msgstr "Relatív páratartalom"
 
 #: tform1.label20.caption
-msgid "No mains voltage"
-msgstr "Nincs hálózati feszültség"
+msgid "Opened overcurrent breaker"
+msgstr "Nyitott túláramvédelem"
 
 #: tform1.label21.caption
-msgid "Opened overcurrent breaker #1"
-msgstr "Nyitott túláramvédelem #1"
+msgid "Water pump error (no water)"
+msgstr "Szivattyú hiba (nincs víz)"
 
 #: tform1.label22.caption
-msgid "Opened overcurrent breaker #2"
-msgstr "Nyitott túláramvédelem #2"
+msgid "Water pump error (clogging)"
+msgstr "Szivattyú hiba (dugulás)"
 
 #: tform1.label23.caption
-msgid "Opened overcurrent breaker #3"
-msgstr "Nyitott túláramvédelem #3"
+msgid "Irrigator tube #1"
+msgstr "Öntözőcső #1"
+
+#: tform1.label24.caption
+msgid "Irrigator tube #2"
+msgstr "Öntözőcső #2"
+
+#: tform1.label25.caption
+msgid "Irrigator tube #3"
+msgstr "Öntözőcső #3"
 
 #: tform1.label27.caption
 msgid "Slave controller pair"
 msgstr "Segédvezérlő pár"
 
-#: tform1.label28.caption
-msgctxt "TFORM1.LABEL28.CAPTION"
-msgid "Last change:"
-msgstr "Utolsó változás"
-
-#: tform1.label31.caption
-msgid "Good values"
-msgstr "Jó értékek"
-
-#: tform1.label32.caption
-msgid "Out of optimal range"
-msgstr "Kívül az optimális értékeken"
-
-#: tform1.label33.caption
-msgid "Bad values"
-msgstr "Rossz értékek"
+#: tform1.label3.caption
+msgctxt "tform1.label3.caption"
+msgid "0 °C"
+msgstr "0 °C"
 
 #: tform1.label37.caption
 msgid "Manual operation"
@@ -120,9 +153,13 @@ msgid "Opened breaker"
 msgstr "Nyitott túláramvédelem"
 
 #: tform1.label39.caption
-msgctxt "TFORM1.LABEL39.CAPTION"
-msgid "Alarm event detected"
-msgstr "Riasztás"
+msgid "Alarm"
+msgstr "Riasztó"
+
+#: tform1.label4.caption
+msgctxt "tform1.label4.caption"
+msgid "0 %"
+msgstr "0%"
 
 #: tform1.label40.caption
 msgid "Lamps"
@@ -136,6 +173,11 @@ msgstr "Ventilátor"
 msgid "Heaters"
 msgstr "Fűtés"
 
+#: tform1.label5.caption
+msgctxt "TFORM1.LABEL5.CAPTION"
+msgid "0 %"
+msgstr "0%"
+
 #: tform1.label6.caption
 msgid "Relative gas concentrate"
 msgstr "Relatív gáz koncentráció"
@@ -143,6 +185,11 @@ msgstr "Relatív gáz koncentráció"
 #: tform1.label7.caption
 msgid "Operation mode:"
 msgstr "Működési mód:"
+
+#: tform1.label9.caption
+msgctxt "TFORM1.LABEL9.CAPTION"
+msgid "0 °C"
+msgstr "0 °C"
 
 #: tform1.speedbutton1.hint
 msgid "Read data from device"
@@ -164,3 +211,38 @@ msgstr "Csatorna #0"
 msgid "Channel #?"
 msgstr "Csatorna #?"
 
+#~ msgid "Mains voltage"
+#~ msgstr "Hálózati feszültség"
+
+#~ msgid "Status signs"
+#~ msgstr "Állapotjelzők"
+
+#~ msgctxt "tform1.label18.caption"
+#~ msgid "Last change:"
+#~ msgstr "Utolsó változás:"
+
+#~ msgid "No mains voltage"
+#~ msgstr "Nincs hálózati feszültség"
+
+#~ msgid "Opened overcurrent breaker #2"
+#~ msgstr "Nyitott túláramvédelem #2"
+
+#~ msgid "Opened overcurrent breaker #3"
+#~ msgstr "Nyitott túláramvédelem #3"
+
+#~ msgctxt "TFORM1.LABEL28.CAPTION"
+#~ msgid "Last change:"
+#~ msgstr "Utolsó változás"
+
+#~ msgid "Good values"
+#~ msgstr "Jó értékek"
+
+#~ msgid "Out of optimal range"
+#~ msgstr "Kívül az optimális értékeken"
+
+#~ msgid "Bad values"
+#~ msgstr "Rossz értékek"
+
+#~ msgctxt "TFORM1.LABEL39.CAPTION"
+#~ msgid "Alarm event detected"
+#~ msgstr "Riasztás"

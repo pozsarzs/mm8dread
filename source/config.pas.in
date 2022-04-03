@@ -32,11 +32,11 @@ const
   {$ENDIF}
   // user's folders
   {$IFDEF UNIX}
-    DIR_CONFIG='/.config/mm5dread/';
+    DIR_CONFIG='/.config/mm8dread/';
   {$ENDIF}
   {$IFDEF ANDROID}
     DIR_CONFIG='/config/';
   {$ENDIF}
   {$IFDEF WIN32}
-    DIR_CONFIG='\AppData\Local\mm5dread\';
+    DIR_CONFIG='\AppData\Local\mm8dread\';
   {$ENDIF}
