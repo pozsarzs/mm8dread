@@ -1,7 +1,7 @@
 @echo off
 rem ----------------------------------------------------------------------------
-rem  MM8DRead v0.2 * Status reader program for MM8D device
-rem  Copyright (C) 2020-2021 Pozsár Zsolt pozsar.zsolt@szerafingomba.hu
+rem  MM8DRead v0.3 * Status reader program for MM8D device
+rem  Copyright (C) 2020-2022 Pozsár Zsolt pozsar.zsolt@szerafingomba.hu
 rem  build.bat
 rem  Utility for build/install/uninstall application on Windows
 rem ----------------------------------------------------------------------------

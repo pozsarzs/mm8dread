@@ -1,6 +1,6 @@
 '+-----------------------------------------------------------------------------+
-'| MM8DRead v0.1 * Status reader program for MM8D/RPI device                   |
-'| Copyright (C) 2020 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>             |
+'| MM8DRead v0.3 * Status reader program for MM8D device                       |
+'| Copyright (C) 2020-2022 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>        |
 '| mkshortcut.vbs                                                              |
 '| Make shortcut                                                               |
 '+-----------------------------------------------------------------------------+
