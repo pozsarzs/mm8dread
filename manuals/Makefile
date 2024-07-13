@@ -1,42 +1,52 @@
 # +----------------------------------------------------------------------------+
-# | MM8DRead v0.3 * Status reader program for MM8D device                      |
-# | Copyright (C) 2020-2022 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>       |
+# | MM8DRead v0.4 * Status reader program for MM8D device                      |
+# | Copyright (C) 2020-2024 Pozsár Zsolt <pozsarzs@gmail.com>                  |
 # | Makefile                                                                   |
-# | Makefile for manual pages                                                  |
+# | Makefile for manuals                                                       |
 # +----------------------------------------------------------------------------+
 
 include ../Makefile.global
 
-languages = en
+title="manuals\t\t"
+removetargetdir=0
+sourcedir="."
+targetdir=$(mandir)
+filemode=$(txtmode)
+man1files=`ls $(sourcedir)/*.1 | grep -v Makefile | grep -v '\.in'`
 
 all:
 
 clean:
+	@for x in $(man1files); do \
+	  if [ -f $(sourcedir)/$$x ]; \
+	  then \
+	    $(rm) $(sourcedir)/$$x; \
+	  fi \
+	done
 
 install:
-	@echo -n "- Installing manual files..."
-	@for x in $(languages); do \
-	  if [ -e $(name)_$$x.1 ]; \
+	@echo -n "- Installing "$(title)"["
+	@$(install) --directory $(targetdir)/man1;
+	@for x in $(man1files); do \
+	  if [ -f $$x ]; \
 	  then \
-	    $(install) -d $(mandir)/$$x/man1; \
-	    $(install) -m $(txtmode) $(name)_$$x.1 $(mandir)/$$x/man1; \
-	    mv $(mandir)/$$x/man1/$(name)_$$x.1 $(mandir)/$$x/man1/$(name).1 ; \
-	  fi; \
+	    $(install) --mode $(filemode) $(sourcedir)/$$x $(targetdir)/man1/; \
+	    echo -n "#"; \
+	    fi; \
 	done
-	@$(install) -d $(mandir)/man1;
-	@mv $(mandir)/en/man1/* $(mandir)/man1
-	@rmdir $(mandir)/en/man1/
-	@rmdir $(mandir)/en
-	@echo "done."
+	@echo "]"
 
 uninstall:
-	@echo -n "- Removing manual files..."
-	@for x in $(languages); do \
-	  if [ -e $(name)_$$x.1 ]; \
+	@echo -n "- Removing "$(title)"["
+	@for x in $(man1files); do \
+	  if [ -f $$x ]; \
 	  then \
-	    $(rm) $(mandir)/$$x/man1/$(name).1; \
+	    $(rm) $(targetdir)/man1/$$x; \
+	    echo -n "#"; \
 	  fi; \
 	done
-	@$(rm) $(mandir)/man1/$(name).1;
-	@echo "done."
-
+	@if [ $(removetargetdir) -eq 1 ]; \
+	then \
+	  if [ -d $(targetdir)/man1 ]; then $(rmdir) $(targetdir)/man1; fi; \
+	fi;
+	@echo "]"

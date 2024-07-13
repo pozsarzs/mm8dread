@@ -1,6 +1,6 @@
 { +--------------------------------------------------------------------------+ }
-{ | MM8DRead v0.3 * Status reader program for MM8D device                    | }
-{ | Copyright (C) 2020-2022 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>     | }
+{ | MM8DRead v0.4 * Status reader program for MM8D device                    | }
+{ | Copyright (C) 2020-2024 Pozsár Zsolt <pozsarzs@gmail.com>                | }
 { | config.pas(.in)                                                          | }
 { | Setting for source code                                                  | }
 { +--------------------------------------------------------------------------+ }
@@ -14,16 +14,13 @@
 
 const
   APPNAME='MM8DRead';
-  VERSION='0.3';
+  VERSION='0.4';
   // install path
   INSTPATH='@prefix@/';
   {$IFDEF UseFHS}
     MYI18PATH='@prefix@/share/locale/';
   {$ELSE}
     {$IFDEF UNIX}
-      MYI18PATH='/languages/';
-    {$ENDIF}
-    {$IFDEF ANDROID}
       MYI18PATH='/languages/';
     {$ENDIF}
     {$IFDEF WIN32}
@@ -33,10 +30,9 @@ const
   // user's folders
   {$IFDEF UNIX}
     DIR_CONFIG='/.config/mm8dread/';
-  {$ENDIF}
-  {$IFDEF ANDROID}
-    DIR_CONFIG='/config/';
+    BROWSER='xdg-open';
   {$ENDIF}
   {$IFDEF WIN32}
     DIR_CONFIG='\AppData\Local\mm8dread\';
+    BROWSER='rundll32.exe url.dll,FileProtocolHandler';
   {$ENDIF}

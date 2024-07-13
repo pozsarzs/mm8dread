@@ -1,12 +1,62 @@
-Installation instruction for source and binary tar.gz package
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Installation instruction
+------------------------
 
-1. Linux
-~~~~~~~~
-a. From source package
+1. FreeBSD
+~~~~~~~~~~
+a. From binary (txz) package
+
+   Use package manager to install/remove application.
+
+b. From source package
 
    Build and install:
-   $ tar -xzf mm8dread-0.3.tar.gz
+   # tar -xzf mm8dread-0.4.tar.gz
+   # ./configure
+   # make
+   # make install
+
+   Remove:
+   # make uninstall
+
+2. Linux
+~~~~~~~~
+a. From binary (deb, rpm, txz) package
+
+   Use package manager to install/remove application.
+
+b. From binary (bin) package
+
+   Install:
+   # ./mm8dread-0.4-i586.bin
+
+   Remove:
+   # /opt/mm8dread/uninstall
+
+c. From binary (tar.gz) package
+
+   Install:
+   # cp mm8dread-0.4-i586.tar.gz /opt
+   # cd /opt
+   # tar -xzf mm8dread-0.4-i586.tar.gz
+   # cd mm8dread
+   # ./create_links
+            or
+   # tar -xzf mm8dread-0.4-i586.tar.gz
+   # cd mm8dread
+   # ./install
+
+   Remove:
+   # /opt/mm8dread/remove_links
+   # rm -r /opt/mm8dread/
+            or
+   # /opt/mm8dread/uninstall
+
+d. From source package
+
+   Build and install:
+   $ tar -xzf mm8dread-0.4.tar.gz
+            or
+   $ git clone https://github.com/pozsarzs/mm8dread.git
    $ ./configure
    $ make
    # make install
@@ -14,40 +64,29 @@ a. From source package
    Remove:
    # make uninstall
 
-b. From binary package
-
-   Install:
-   # tar -xzf mm8dread-0.3-*.tar.gz
-   # cd mm8dread
-   # ./create_links
-            or
-   # tar -xzf mm8dread-0.3-*.tar.gz
-   # cd mm8dread
-   # ./install
-
-   Remove:
-   # cd mm8dread
-   # ./remove_links
-   # cd ..
-   # rm -r mm8dread
-            or
-   # /opt/mm8dread/uninstall
-
-2. Windows
+3. Windows
 ~~~~~~~~~~
-a. From source package
+a. From binary (exe) package
+
+   Run installer file and follow intructions.
+
+b. From binary (msi) package
+
+   > msiexec.exe /i mm8dread-0.4-win32.msi (or double-click to open package)
+
+c. From binary (zip) package
+
+   > unzip mm8dread-0.4-win32.zip          (or use unpacking application)
+
+d. From source package
 
    Build and install:
-   > tar -xzf mm8dread-0.3.tar.gz
+   > tar -xzf mm8dread-0.4.tar.gz          (or use unpacking application)
    > build.bat
    > build.bat install
 
    Remove:
    > build.bat uninstall
 
-c. From binary package
-
-   > unzip mm8dread-0.3-win32.zip
-
----------------------------------------------------------------------------------
- MM8DRead * Copyright (C) 2020-2022 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>
+--------------------------------------------------------------------------------
+ MM8DRead * Copyright (C) 2020-2024 Pozsár Zsolt <pozsarzs@gmail.com>

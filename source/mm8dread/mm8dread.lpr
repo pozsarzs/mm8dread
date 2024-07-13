@@ -1,6 +1,6 @@
 { +--------------------------------------------------------------------------+ }
-{ | MM8DRead v0.3 * Status reader program for MM8D device                    | }
-{ | Copyright (C) 2020-2022 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>     | }
+{ | MM8DRead v0.4 * Status reader program for MM8D device                    | }
+{ | Copyright (C) 2020-2024 Pozsár Zsolt <pozsarzs@gmail.com>                | }
 { | mm8dread.lpr                                                             | }
 { | Project file                                                             | }
 { +--------------------------------------------------------------------------+ }
@@ -126,7 +126,7 @@ begin
     10: help(False);
     20: verinfo;
   end;
-  Application.Title := 'MM8DRead';
+  Application.Title:='MM8DRead';
   RequireDerivedFormResource := True;
   Application.Initialize;
   Application.CreateForm(TForm1, Form1);

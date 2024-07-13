@@ -1,0 +1,12 @@
+bin/mm8dread
+man/man1/mm8dread.1
+share/applications/mm8dread.desktop
+share/doc/mm8dread/AUTHORS
+share/doc/mm8dread/changelog
+share/doc/mm8dread/copyright
+share/doc/mm8dread/INSTALL
+share/doc/mm8dread/LICENCE
+share/doc/mm8dread/README
+share/doc/mm8dread/VERSION
+share/locale/hu/mm8dread.mo
+share/pixmaps/mm8dread.xpm

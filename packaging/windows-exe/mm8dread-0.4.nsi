@@ -2,9 +2,9 @@
 
 ; HM NIS Edit Wizard helper defines
 !define PRODUCT_NAME "MM8DRead"
-!define PRODUCT_VERSION "0.3"
-!define PRODUCT_PUBLISHER "Pozs√°r Zsolt"
-!define PRODUCT_WEB_SITE "http://www.szerafingomba.hu/softwares/"
+!define PRODUCT_VERSION "0.4"
+!define PRODUCT_PUBLISHER "Pozs·r Zsolt"
+!define PRODUCT_WEB_SITE "http://www.pozsarzs.hu/"
 !define PRODUCT_DIR_REGKEY "Software\Microsoft\Windows\CurrentVersion\App Paths\mm8dread.exe"
 !define PRODUCT_UNINST_KEY "Software\Microsoft\Windows\CurrentVersion\Uninstall\${PRODUCT_NAME}"
 !define PRODUCT_UNINST_ROOT_KEY "HKLM"
@@ -49,7 +49,7 @@ LicenseLangString MUILicense ${LANG_HUNGARIAN} "mm8dread\LICENCE"
 ; MUI end ------
 
 Name "${PRODUCT_NAME} ${PRODUCT_VERSION}"
-OutFile "mm8dread-0.3-win32.exe"
+OutFile "mm8dread-${PRODUCT_VERSION}-win32.exe"
 InstallDir "$PROGRAMFILES\MM8DRead"
 InstallDirRegKey HKLM "${PRODUCT_DIR_REGKEY}" ""
 ShowInstDetails show

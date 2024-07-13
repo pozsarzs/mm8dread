@@ -1,3 +1,10 @@
+mm8dread (0.4) unstable; urgency=low
+
+  * Added scripts.
+  * Compatible with MM8D-sw v0.4 or newer.
+
+ -- Pozsár Zsolt <pozsarzs@gmail.com>  Sat, 13 Jul 2024 12:41:00
+
 mm8dread (0.3) unstable; urgency=low
 
   * Compatibility for MM8D v0.3.

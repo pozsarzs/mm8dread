@@ -1,6 +1,6 @@
 { +--------------------------------------------------------------------------+ }
-{ | MM8DRead v0.3 * Status reader program for MM8D device                    | }
-{ | Copyright (C) 2020-2022 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>     | }
+{ | MM8DRead v0.4 * Status reader program for MM8D device                    | }
+{ | Copyright (C) 2020-2024 Pozsár Zsolt <pozsarzs@gmail.com>                | }
 { | untcommonproc.pas                                                        | }
 { | Common functions and procedures                                          | }
 { +--------------------------------------------------------------------------+ }
@@ -18,13 +18,12 @@ unit untcommonproc;
 interface
 
 uses
-  Classes, Dialogs, INIFiles, SysUtils, {$IFDEF WIN32}Windows,{$ENDIF} httpsend;
+  Classes, Dialogs, INIFiles, SysUtils, {$IFDEF WIN32}Windows,{$ENDIF} httpsend, comctrls;
 
 var
-  value0, value1, value2, value3: TStringList;
+  value0, value1, value2, value3, value4: TStringList;
   exepath: shortstring;
   lang: string[2];
-  uids: string;
   urls: array[0..63] of string;
   userdir: string;
 {$IFDEF WIN32}
@@ -39,7 +38,7 @@ const
   {$I config.pas.in}
 {$ENDIF}
 
-function getdatafromdevice(url, uid: string; channel: byte): boolean;
+function getdatafromdevice(url: string; channel: byte): boolean;
 function getexepath: string;
 function getlang: string;
 function loadconfiguration(filename: string): boolean;
@@ -55,20 +54,25 @@ function SHGetFolderPath(hwndOwner: HWND; nFolder: integer; hToken: THandle;
 implementation
 
 // get data from controller device via http
-function getdatafromdevice(url, uid: string; channel: byte): boolean;
+function getdatafromdevice(url: string; channel: byte): boolean;
 begin
   getdatafromdevice := True;
   value0.Clear;
   value1.Clear;
   value2.Clear;
+  value3.Clear;
+  value4.Clear;
   with THTTPSend.Create do
   begin
-    if not HttpGetText(url + '/cgi-bin/getdata.cgi?uid=' + uid + '&value=0&channel=0', value0) then
+    if not HttpGetText(url + '/cgi-bin/getdata.cgi?&value=0&channel=0', value0) then
       getdatafromdevice := False;
-    if not HttpGetText(url + '/cgi-bin/getdata.cgi?uid=' + uid + '&value=2&channel=0', value1) then
+    if not HttpGetText(url + '/cgi-bin/getdata.cgi?value=2&channel=0', value1) then
       getdatafromdevice := False;
-    if not HttpGetText(url + '/cgi-bin/getdata.cgi?uid=' + uid + '&value=2&channel=' + inttostr(channel), value2) then
-
+    if not HttpGetText(url + '/cgi-bin/getdata.cgi?value=2&channel=' + inttostr(channel), value2) then
+      getdatafromdevice := False;
+    if not HttpGetText(url + '/cgi-bin/getdata.cgi?value=3&channel=0', value3) then
+      getdatafromdevice := False;
+    if not HttpGetText(url + '/cgi-bin/getdata.cgi?value=3&channel=' + inttostr(channel), value4) then
       getdatafromdevice := False;
     Free;
   end;
@@ -95,8 +99,6 @@ begin
  {$IFDEF UNIX}
   s := getenvironmentvariable('LANG');
  {$ENDIF}
- {$IFDEF ANDROID}
- {$ENDIF}
  {$IFDEF WIN32}
   size := getlocaleinfo(LOCALE_USER_DEFAULT, LOCALE_SABBREVLANGNAME, nil, 0);
   getmem(buffer, size);
@@ -122,7 +124,6 @@ begin
   iif := TIniFile.Create(filename);
   loadconfiguration := True;
   try
-    uids := iif.ReadString('uids', '1', '');
     for b := 0 to 63 do
       urls[b] := iif.ReadString('urls', IntToStr(b + 1), '');
   except
@@ -140,7 +141,6 @@ begin
   iif := TIniFile.Create(filename);
   saveconfiguration := True;
   try
-    iif.WriteString('uids', '1', uids);
     for b := 0 to 63 do
       iif.WriteString('urls', IntToStr(b + 1), urls[b]);
   except
@@ -166,9 +166,6 @@ var
 begin
  {$IFDEF UNIX}
   userdir := getenvironmentvariable('HOME');
- {$ENDIF}
- {$IFDEF ANDROID}
-  userdir := '/data/data/hu.szerafingomba.mm8dread';
  {$ENDIF}
  {$IFDEF WIN32}
   userdir := getuserprofile;

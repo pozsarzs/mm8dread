@@ -1,0 +1,381 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: Pozsár Zsolt <pozsarzs@gmail.com>\n"
+"Language-Team: \n"
+"Language: hu\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.2.2\n"
+
+#: frmmain.message01
+msgid "Cannot read configuration file!"
+msgstr "A beállításfájl nem olvasható!"
+
+#: frmmain.message02
+msgid "Cannot write configuration file!"
+msgstr "A beállításfájl nem írható!"
+
+#: frmmain.message03
+msgid "Cannot read data from this URL!"
+msgstr "Nem tudok adatokat beolvasni erről az URL-ről!"
+
+#: frmmain.message04
+msgid "Not compatible controller!"
+msgstr "Nem kompatibilis vezérlő!"
+
+#: frmmain.message05
+msgid "Bad data!"
+msgstr "Rossz adat!"
+
+#: frmmain.message06
+msgid "Growing mushroom"
+msgstr "Gombatermesztés"
+
+#: frmmain.message07
+msgid "Growing hyphae"
+msgstr "Átszövetés"
+
+#: frmmain.message08
+msgid "Stand-by"
+msgstr "Készenlét"
+
+#: frmmain.message09
+msgid "name"
+msgstr "név"
+
+#: frmmain.message10
+msgid "version"
+msgstr "verzió"
+
+#: frmmain.message11
+msgid "channel name"
+msgstr "csatornanév"
+
+#: frmmain.message12
+msgid "date"
+msgstr "date"
+
+#: frmmain.message13
+msgid "time"
+msgstr "idő"
+
+#: frmmain.message14
+msgctxt "frmmain.message14"
+msgid "overcurrent breaker"
+msgstr "túláramvédelem"
+
+#: frmmain.message15
+msgid "low pressure"
+msgstr "alacsony nyomás"
+
+#: frmmain.message16
+msgid "high pressure"
+msgstr "magas nyomás"
+
+#: frmmain.message17
+msgid "outdoor temperature"
+msgstr "külső hőmérséklet"
+
+#: frmmain.message18
+msgid "irrigator tube #1"
+msgstr "öntözőcső #1"
+
+#: frmmain.message19
+msgid "irrigator tube #2"
+msgstr "öntözőcső #2"
+
+#: frmmain.message20
+msgid "irrigator tube #3"
+msgstr "öntözőcső #3"
+
+#: frmmain.message21
+msgid "temperature"
+msgstr "hőmérséklet"
+
+#: frmmain.message22
+msgid "relative humidity"
+msgstr "relatív páratartalom"
+
+#: frmmain.message23
+msgid "manual operation"
+msgstr "kézi működtetés"
+
+#: frmmain.message24
+msgid "operation mode"
+msgstr "működési mód"
+
+#: frmmain.message25
+msgctxt "frmmain.message25"
+msgid "overcurrent breaker"
+msgstr "túláramvédelem"
+
+#: frmmain.message26
+msgid "alarm"
+msgstr "riasztó"
+
+#: frmmain.message27
+msgid "timeout error"
+msgstr "időtúllépés"
+
+#: frmmain.message28
+msgid "light"
+msgstr "világítás"
+
+#: frmmain.message29
+msgid "ventilator"
+msgstr "szellőztetés"
+
+#: frmmain.message30
+msgid "heater"
+msgstr "fűtés"
+
+#: frmmain.message31
+msgid "override channel"
+msgstr "felülbírált csatorna"
+
+#: frmmain.message32
+msgid "Cannot run default webbrowser!"
+msgstr "Nem tudom futtatni az alapértelmezés szerinti böngészőt!"
+
+#: frmmain.message33
+msgid "Channel #"
+msgstr "Csatorna #"
+
+#: tform1.button1.caption
+msgid "&Refresh display"
+msgstr "Kijelzők f&rissítése"
+
+#: tform1.caption
+msgid "Form1"
+msgstr "Form1"
+
+#: tform1.combobox1.hint
+msgid "URL"
+msgstr "URL"
+
+#: tform1.combobox2.hint
+msgid "Number of channel"
+msgstr "Csatorna száma"
+
+#: tform1.groupbox1.caption
+msgid "MM7D"
+msgstr "MM7D"
+
+#: tform1.groupbox2.caption
+msgid "MM6D"
+msgstr "MM6D"
+
+#: tform1.groupbox3.caption
+msgctxt "tform1.groupbox3.caption"
+msgid "Status"
+msgstr "Állapot"
+
+#: tform1.groupbox4.caption
+msgid "MM8D"
+msgstr "MM8D"
+
+#: tform1.groupbox5.caption
+msgctxt "tform1.groupbox5.caption"
+msgid "Outputs"
+msgstr "Kimenetek"
+
+#: tform1.groupbox6.caption
+msgid "Others"
+msgstr "Egyéb"
+
+#: tform1.groupbox8.caption
+msgctxt "tform1.groupbox8.caption"
+msgid "Status"
+msgstr "Állapot"
+
+#: tform1.groupbox9.caption
+msgctxt "tform1.groupbox9.caption"
+msgid "Outputs"
+msgstr "Kimenetek"
+
+#: tform1.label1.caption
+msgid "Temperature"
+msgstr "Hőmérséklet"
+
+#: tform1.label10.caption
+msgid "Outdoor temperature"
+msgstr "Külső hőmérséklet"
+
+#: tform1.label11.caption
+msgid "(C)2020-2024 Pozsár Zsolt"
+msgstr "(C)2020-2024 Pozsár Zsolt"
+
+#: tform1.label12.caption
+msgid "http://www.pozsarzs.hu"
+msgstr "http://www.pozsarzs.hu"
+
+#: tform1.label17.caption
+msgid "Master controller"
+msgstr "Fő vezérlő"
+
+#: tform1.label2.caption
+msgid "Relative humidity"
+msgstr "Relatív páratartalom"
+
+#: tform1.label20.caption
+msgid "Opened overcurrent breaker"
+msgstr "Nyitott túláramvédelem"
+
+#: tform1.label21.caption
+msgid "Water pump error (no water)"
+msgstr "Szivattyú hiba (nincs víz)"
+
+#: tform1.label22.caption
+msgid "Water pump error (clogging)"
+msgstr "Szivattyú hiba (dugulás)"
+
+#: tform1.label23.caption
+msgid "Irrigator tube #1"
+msgstr "Öntözőcső #1"
+
+#: tform1.label24.caption
+msgid "Irrigator tube #2"
+msgstr "Öntözőcső #2"
+
+#: tform1.label25.caption
+msgid "Irrigator tube #3"
+msgstr "Öntözőcső #3"
+
+#: tform1.label27.caption
+msgid "Slave controller pair"
+msgstr "Segédvezérlő pár"
+
+#: tform1.label3.caption
+msgctxt "tform1.label3.caption"
+msgid "0 °C"
+msgstr "0 °C"
+
+#: tform1.label37.caption
+msgid "Manual operation"
+msgstr "Kézi működtetés"
+
+#: tform1.label38.caption
+msgid "Opened breaker"
+msgstr "Nyitott túláramvédelem"
+
+#: tform1.label39.caption
+msgid "Alarm"
+msgstr "Riasztó"
+
+#: tform1.label4.caption
+msgid "0 %"
+msgstr "0 %"
+
+#: tform1.label40.caption
+msgid "Lamps"
+msgstr "Világítás"
+
+#: tform1.label41.caption
+msgid "Ventilators"
+msgstr "Ventilátor"
+
+#: tform1.label42.caption
+msgid "Heaters"
+msgstr "Fűtés"
+
+#: tform1.label5.caption
+msgid "Label5"
+msgstr "Label5"
+
+#: tform1.label6.caption
+msgid "Status reader for MM8D device"
+msgstr "Állapotolvasó program MM8D eszközhöz"
+
+#: tform1.label7.caption
+msgid "Operation mode:"
+msgstr "Működési mód:"
+
+#: tform1.label9.caption
+msgctxt "tform1.label9.caption"
+msgid "0 °C"
+msgstr "0 °C"
+
+#: tform1.speedbutton2.hint
+msgid "Add URL to list"
+msgstr "URL hozzáadása a listához"
+
+#: tform1.speedbutton3.hint
+msgid "Remove URL from list"
+msgstr "URL eltávolítása a listából"
+
+#: tform1.tabsheet1.caption
+msgid "Measured values"
+msgstr "Mért értékek"
+
+#: tform1.tabsheet2.caption
+msgid "Channel #0"
+msgstr "Csatorna #0"
+
+#: tform1.tabsheet3.caption
+msgid "Channel #?"
+msgstr "Csatorna #?"
+
+#: tform1.tabsheet4.caption
+msgid "Summary"
+msgstr "Összegzés"
+
+#: tform1.tabsheet5.caption
+msgid "About"
+msgstr "Névjegy"
+
+#~ msgid "UID"
+#~ msgstr "UID"
+
+#~ msgid "00000000"
+#~ msgstr "00000000"
+
+#~ msgctxt "TFORM1.LABEL5.CAPTION"
+#~ msgid "0 %"
+#~ msgstr "0%"
+
+#~ msgid "Relative gas concentrate"
+#~ msgstr "Relatív gáz koncentráció"
+
+#~ msgctxt "TFORM1.LABEL9.CAPTION"
+#~ msgid "0 °C"
+#~ msgstr "0 °C"
+
+#~ msgid "Read data from device"
+#~ msgstr "Adat olvasása az eszközről"
+
+#~ msgid "Mains voltage"
+#~ msgstr "Hálózati feszültség"
+
+#~ msgid "Status signs"
+#~ msgstr "Állapotjelzők"
+
+#~ msgctxt "tform1.label18.caption"
+#~ msgid "Last change:"
+#~ msgstr "Utolsó változás:"
+
+#~ msgid "No mains voltage"
+#~ msgstr "Nincs hálózati feszültség"
+
+#~ msgid "Opened overcurrent breaker #2"
+#~ msgstr "Nyitott túláramvédelem #2"
+
+#~ msgid "Opened overcurrent breaker #3"
+#~ msgstr "Nyitott túláramvédelem #3"
+
+#~ msgctxt "TFORM1.LABEL28.CAPTION"
+#~ msgid "Last change:"
+#~ msgstr "Utolsó változás"
+
+#~ msgid "Good values"
+#~ msgstr "Jó értékek"
+
+#~ msgid "Out of optimal range"
+#~ msgstr "Kívül az optimális értékeken"
+
+#~ msgctxt "TFORM1.LABEL39.CAPTION"
+#~ msgid "Alarm event detected"
+#~ msgstr "Riasztás"

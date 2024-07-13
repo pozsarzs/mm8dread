@@ -1,32 +1,47 @@
 # +----------------------------------------------------------------------------+
-# | MM8DRead v0.3 * Status reader program for MM8D device                      |
-# | Copyright (C) 2020-2022 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>       |
+# | MM8DRead v0.4 * Status reader program for MM8D device                      |
+# | Copyright (C) 2020-2024 Pozsár Zsolt <pozsarzs@gmail.com>                  |
 # | Makefile                                                                   |
-# | Makefile for documents                                                     |
+# | Makefile for many files of the same type                                   |
 # +----------------------------------------------------------------------------+
 
 include ../Makefile.global
 
-docfiles= `ls | grep -v Makefile | grep -v ?? | grep -v sample`
-lang=
+title="documentation\t"
+removetargetdir=1
+sourcedir="."
+targetdir=$(datarootdir)/doc/$(name)
+filemode=$(txtmode)
+files=`ls $(sourcedir) | grep -v Makefile`
 
 all:
 
 clean:
 
 install:
-	@echo -n "- Installing document files..."
-	@$(install) -d $(datarootdir)/doc/$(name)/$(lang)
-	@for x in $(docfiles); do \
-	  if [ -e $$x ]; then $(install) -m $(txtmode) $$x $(datarootdir)/doc/$(name)/$(lang); fi; \
+	@echo -n "- Installing "$(title)"["
+	@$(install) --directory $(targetdir)
+	@for x in $(files); do \
+	  if [ -f $(sourcedir)/$$x ]; \
+	  then \
+	    $(install) --mode $(filemode) $(sourcedir)/$$x $(targetdir); \
+	    echo -n "#"; \
+	  fi \
 	done
-	@echo "done."
+	@$(install) --mode $(filemode) "../LICENCE" $(targetdir)	
+	@echo -n "#"
+	@echo "]"
 
 uninstall:
-	@echo -n "- Removing document files..."
-	@for x in $(docfiles); do \
-	  if [ -e $$x ]; then $(rm) $(datarootdir)/doc/$(name)/$(lang)/$$x; fi; \
+	@echo -n "- Removing "$(title)"["
+	@$(rm) $(targetdir)/LICENCE
+	@echo -n "#"
+	@for x in $(files); do \
+	  $(rm) $(targetdir)/$$x; \
+	  echo -n "#"; \
 	done
-	@rmdir $(datarootdir)/doc/$(name)/$(lang)
-	@echo "done."
-
+	@if [ $(removetargetdir) -eq 1 ]; \
+	then \
+	  if [ -d $(targetdir) ]; then $(rmdir) $(targetdir); fi; \
+	fi;
+	@echo "]"

@@ -12,16 +12,20 @@ a. Visit homepage (see later) to download installer packages:
 
   architecture  operation system        filename
   --------------------------------------------------------------------
-  (all)         (source code)           mm8dread-0.3.tar.gz
-  amd64         Raspbian OS             mm8dread_0.3-1_amd64.deb
-  amd64         Linux                   mm8dread-0.3-amd64.bin
-  amd64         Linux                   mm8dread-0.3-amd64.tar.gz
-  i386          Debian GNU/Linux        mm8dread_0.3-1_i386.deb
-  i586          Linux                   mm8dread-0.3-i586.bin
-  i586          Linux                   mm8dread-0.3-i586.tar.gz
-  i586          Windows 32 bit          mm8dread-0.3-win32.exe
-  i586          Windows 32 bit          mm8dread-0.3-win32.msi
-  i586          Windows 32 bit          mm8dread-0.3-win32.zip
+  (all)         (source code)           mm8dread-0.4.tar.gz
+  amd64         Linux                   mm8dread_0.4-1_amd64.deb
+  amd64         Linux                   mm8dread-0.4-amd64.bin
+  amd64         Linux                   mm8dread-0.4-amd64.tar.gz
+  i386          Debian GNU/Linux        mm8dread_0.4-1_i386.deb
+  i586          Linux                   mm8dread-0.4-i586.bin
+  i586          Linux                   mm8dread-0.4-i586.tar.gz
+  i586          Windows 32 bit          mm8dread-0.4-win32.exe
+  i586          Windows 32 bit          mm8dread-0.4-win32.msi
+  i586          Windows 32 bit          mm8dread-0.4-win32.zip
+
+The source package can be compiled for arm, i386 and amd64 processors,
+FreeBSD, Linux and Windows operating systems. The source package also
+contains the necessary files for packaging.
 
 b. Download from Github
 
@@ -50,4 +54,4 @@ c. Download from Debian repository
                          Hungary
 
 ---------------------------------------------------------------------------------
- MM8DRead * Copyright (C) 2020-2022 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>
+ MM8DRead * Copyright (C) 2020-2024 Pozsár Zsolt <pozsar.zsolt@szerafingomba.hu>
